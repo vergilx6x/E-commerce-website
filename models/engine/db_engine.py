@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import models
-from models.base_model import BaseModel
+from models.base_model import BaseModel, Base
 from models.user import User
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
@@ -16,7 +16,7 @@ class DBStorage:
 
     def __init__(self):
 
-        mysql_user = "root"
+        mysql_user = "admin"
         mysql_pwd = "HHesoyaMMX6XX.."
         mysql_host = "localhost"
         mysql_db = "website_db"
@@ -49,6 +49,7 @@ class DBStorage:
         """delete from the current database session obj if not None"""
         if obj is not None:
             self.__session.delete(obj)
+            
 
     def reload(self):
         """reloads data from the database"""

@@ -14,6 +14,12 @@ class User(BaseModel, Base):
     password = Column(String(128), nullable=False)
     first_name = Column(String(128), nullable=True)
     last_name = Column(String(128), nullable=True)
+    phone_number = Column(String(128), nullable=True)
+    country = Column(String(128), nullable=True)
+    city = Column(String(128), nullable=True)
+    address = Column(String(128), nullable=True)
+    postal_code = Column(String(60), nullable=True)
+    favorites= Column(String(128), nullable=True)
 
     def __init__(self, *args, **kwargs):
         """initializes user"""

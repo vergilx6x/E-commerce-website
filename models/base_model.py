@@ -17,7 +17,7 @@ class BaseModel:
     id = Column(String(60), primary_key=True)
     created_at = Column(DateTime, default = datetime.utcnow)
     updated_at = Column(DateTime, default = datetime.utcnow)
-    deleted_at = Column(DateTime, default = datetime.utcnow)
+    deleted_at = Column(DateTime)
 
     def __init__(self, *args, **kwargs):
 
@@ -33,10 +33,10 @@ class BaseModel:
                 self.updated_at = datetime.strptime(kwargs["updated_at"], time)
             else:
                 self.updated_at = datetime.utcnow()
-            if kwargs.get("deleted_at", None) and type(self.deleted_at) is str:
-                self.deleted_at = datetime.strptime(kwargs["deleted_at"], time)
-            else:
-                self.deleted_at = datetime.utcnow()
+            # if kwargs.get("deleted_at", None) and type(self.deleted_at) is str:
+            #     self.deleted_at = datetime.strptime(kwargs["deleted_at"], time)
+            # else:
+            #     self.deleted_at = datetime.utcnow()
             if kwargs.get("id", None) is None:
                 self.id = str(uuid4())
         else:
