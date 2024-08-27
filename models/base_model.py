@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 
+import models
 from datetime import datetime
 import sqlalchemy
 from sqlalchemy import Column, String, DateTime
@@ -66,6 +67,3 @@ class BaseModel:
                 del new_dict["password"]
         return new_dict
     
-user = BaseModel()
-print(user)
-print(user.to_dict())
