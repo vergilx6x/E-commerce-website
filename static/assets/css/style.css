@@ -11,6 +11,7 @@ header {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     position: sticky;
+    top: 0;
 }
 
 body {
@@ -135,7 +136,7 @@ body {
     padding: 10px;
     display: grid;
     grid-template-columns: repeat(5, 1fr); /* 5 equal columns */
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto;
     grid-gap: 10px;
     align-items: center;
 }
