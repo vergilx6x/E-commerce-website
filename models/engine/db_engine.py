@@ -3,6 +3,8 @@
 import models
 from models.base_model import BaseModel, Base
 from models.user import User
+from models.category import Category
+from models.product import Product
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 

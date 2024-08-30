@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ holds class User"""
 
-import models
 from models.base_model import Base, BaseModel
 from sqlalchemy import Column, String
 from hashlib import md5
@@ -30,6 +29,3 @@ class User(BaseModel, Base):
         if name == "password":
             value = md5(value.encode()).hexdigest()
         super().__setattr__(name, value)
-
-user = User()
-print(user)
