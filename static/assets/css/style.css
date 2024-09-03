@@ -12,6 +12,7 @@ header {
     border-bottom-right-radius: 10px;
     position: sticky;
     top: 0;
+    z-index: 10000;
 }
 
 body {

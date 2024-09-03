@@ -5,6 +5,10 @@ from models.base_model import BaseModel, Base
 from models.user import User
 from models.category import Category
 from models.product import Product
+from models.cart import Cart
+from models.cart_item import Cart_item
+from models.order import Order
+from models.order_item import Order_item
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
