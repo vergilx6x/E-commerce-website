@@ -8,6 +8,7 @@ from models.order import Order
 from models.order_item import Order_item
 from models.cart import Cart
 from models.cart_item import Cart_item
+from models import storage
 
 
 amine = User(email="amine@test.com", password="test", username="amine")
@@ -87,4 +88,6 @@ cart_item3.save()
 cart_item4 = Cart_item(cart_id=cart4.id, product_id=product4.id, quantity=1)
 cart_item4.save()
 
+products = storage.all(Product).values()
+print(products)
 

@@ -13,7 +13,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
 
-classes = {"User": User}
+classes = {"User": User, "Category": Category, "Product": Product, "Cart": Cart, "Cart_item": Cart_item, "Order": Order, "Order_item": Order_item}
 
 class DBStorage:
 
@@ -55,6 +55,17 @@ class DBStorage:
         """delete from the current database session obj if not None"""
         if obj is not None:
             self.__session.delete(obj)
+
+    def rollback(self):
+
+        self.__session.rollback()
+
+    def get_user(self, username):
+
+        users = self.all(User)
+        for value in users.values():
+            if (value.username == username):
+                return value
             
 
     def reload(self):

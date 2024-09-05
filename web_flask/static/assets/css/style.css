@@ -1,0 +1,229 @@
+/* assets/css/styles.css */
+header {
+    width: 100%;
+    height: 70px;
+    background-color: black;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    margin: 0%;
+    max-width: 100%;
+}
+
+/* .left_elements {
+    display: flex;
+    justify-content:space-between
+    align-items: center;
+
+} */
+
+.left_elements button {
+
+    padding: 0px 10px;
+}
+.searchBox {
+    height: 30px;
+    width: 25%;
+    border-radius: 20px;
+}
+
+.topics {
+    width: 100%;
+    height: 500px;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    z-index: -1;
+    box-sizing: border-box;
+}
+
+.gallery {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    border-radius: 10px;
+    z-index: 1;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.navigation img {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.container {
+    background-color: rgb(255, 255, 255);
+    height: 500px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-gap: 10px;
+}
+
+
+
+.container {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 300px 1fr; /* Adjust column widths as needed */
+    grid-template-rows: 1fr 1fr; /* Two rows with equal height */
+    grid-template-areas: 
+      "item1 item2"
+      "item1 item3";
+    gap: 10px; /* Space between grid items */
+  }
+  
+  .category {
+    max-width: 300px;
+    grid-area: item1;
+    background: lightcoral;
+  }
+  
+  .trending {
+    grid-area: item2;
+    background: lightblue;
+  }
+  
+  .new {
+    grid-area: item3;
+    background: lightgreen;
+  }
+  
+  .container div {
+    border-radius: 10px;
+}
+
+/* .container2 {
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    align-items: center;
+}
+
+.container2 div {
+    background-color: red;
+    max-width: 300px;
+    height: 300px;
+    border-radius: 10px;
+} */
+
+.container2 {
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 equal columns */
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    align-items: center;
+}
+
+.container2 div {
+    background-color: red;
+    width: 100%; /* Ensures each item fills its grid cell */
+    height: 300px;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.footer-section h4 {
+    margin-bottom: 10px;
+}
+
+.footer-section p, .footer-section ul, .footer-section form {
+    margin: 0;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    color: #f8c146;
+}
+
+.newsletter-input {
+    padding: 10px;
+    width: 80%;
+    border-radius: 5px;
+    border: none;
+}
+
+.newsletter-button {
+    padding: 10px;
+    background-color: #f8c146;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.newsletter-button:hover {
+    background-color: #f7b835;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    margin-top: 40px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 10px 0;
+}
+
+.footer-bottom a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    color: #f8c146;
+}
