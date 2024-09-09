@@ -1,46 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        h1 {
-            color: #333;
-        }
-        .logout {
-            margin-top: 20px;
-            text-align: right;
-        }
-        .logout a {
-            text-decoration: none;
-            color: #007bff;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Welcome, {{ user.username }}!</h1>
-        <p>Here you can manage your account, view your details, and access other features.</p>
-        <!-- Add more user-specific information or features here -->
-        <div class="logout">
-            <a href="{{ url_for('logout') }}">Logout</a>
-        </div>
-    </div>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Dashboard - E-commerce{% endblock %}
+
+{% block content %}
+    <h2>Welcome, {{ user.username }}</h2>
+    <p>Your account details:</p>
+    <ul>
+        <li>Email: {{ user.email }}</li>
+        <!-- Add more user details if needed -->
+    </ul>
+{% endblock %}

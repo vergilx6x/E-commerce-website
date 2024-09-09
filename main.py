@@ -8,6 +8,7 @@ from models.order import Order
 from models.order_item import Order_item
 from models.cart import Cart
 from models.cart_item import Cart_item
+from models.favorite import Favorite
 from models import storage
 
 
@@ -23,31 +24,31 @@ mohamed.save()
 yahya = User(email="yahya@test.com", password="test", username="yahya")
 yahya.save()
 
-cloths = Category(name="Cloths")
-cloths.save()
+clothes = Category(name="Cloths", image='static/assets/images/clothes.jpg')
+clothes.save()
 
-electronics = Category(name="Electronics")
+electronics = Category(name="Electronics", image='static/assets/images/electronics.jpeg')
 electronics.save()
 
-home = Category(name="Home")
+home = Category(name="Home", image='static/assets/images/home.jpeg')
 home.save()
 
-product1 = Product(id='product1', title='Laptop', price=1000, description='A laptop', quantity=10, category_id=electronics.id, image='laptop.jpg')
+product1 = Product(title='Laptop', price=1000, description='A laptop', quantity=10, category_id=electronics.id, image='static/assets/images/Laptop')
 product1.save()
 
-product2 = Product(id='product2', title='T-Shirt', price=20, description='A T-Shirt', quantity=50, category_id=cloths.id, image='t-shirt.jpg')
+product2 = Product(title='T-Shirt', price=20, description='A T-Shirt', quantity=50, category_id=clothes.id, image='t-shirt.jpg')
 product2.save()
 
-product3 = Product(id='product3', title='Chair', price=50, description='A chair', quantity=20, category_id=home.id, image='chair.jpg')
+product3 = Product(title='Chair', price=50, description='A chair', quantity=20, category_id=home.id, image='chair.jpg')
 product3.save()
 
-product4 = Product(id='product4', title='Smartphone', price=500, description='A smartphone', quantity=15, category_id=electronics.id, image='smartphone.jpg')
+product4 = Product(title='Smartphone', price=500, description='A smartphone', quantity=15, category_id=electronics.id, image='smartphone.jpg')
 product4.save()
 
-product5 = Product(id='product5', title='Dress', price=30, description='A dress', quantity=30, category_id=cloths.id, image='dress.jpg')
+product5 = Product(title='Dress', price=30, description='A dress', quantity=30, category_id=clothes.id, image='dress.jpg')
 product5.save()
 
-product6 = Product(id='product6', title='Table', price=100, description='A table', quantity=10, category_id=home.id, image='table.jpg')
+product6 = Product(title='Table', price=100, description='A table', quantity=10, category_id=home.id, image='table.jpg')
 product6.save()
 
 order1 = Order(user_id=amine.id)

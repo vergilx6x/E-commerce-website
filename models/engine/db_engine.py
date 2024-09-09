@@ -10,10 +10,11 @@ from models.cart_item import Cart_item
 from models.order import Order
 from models.order_item import Order_item
 from sqlalchemy import create_engine
+from models.favorite import Favorite
 from sqlalchemy.orm import scoped_session, sessionmaker
 
 
-classes = {"User": User, "Category": Category, "Product": Product, "Cart": Cart, "Cart_item": Cart_item, "Order": Order, "Order_item": Order_item}
+classes = {"User": User, "Category": Category, "Product": Product, "Cart": Cart, "Cart_item": Cart_item, "Order": Order, "Order_item": Order_item, "Favorite": Favorite}
 
 class DBStorage:
 

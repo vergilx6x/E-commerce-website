@@ -16,6 +16,8 @@ class Product(BaseModel, Base):
     image = Column(String(128), nullable=True)
     category = relationship('Category', backref='products')
 
+    favorites = relationship("Favorite", back_populates="product")
+    
     def __init__(self, *args, **kwargs):
         """initializes product"""
         super().__init__(*args, **kwargs)

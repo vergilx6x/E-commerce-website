@@ -3,6 +3,7 @@
 
 from models.base_model import Base, BaseModel
 from sqlalchemy import Column, String
+from sqlalchemy.orm import relationship
 from hashlib import md5
 
 
@@ -19,14 +20,9 @@ class User(BaseModel, Base):
     city = Column(String(128), nullable=True)
     address = Column(String(128), nullable=True)
     postal_code = Column(String(60), nullable=True)
-    favorites= Column(String(128), nullable=True)
+    
+    favorites = relationship("Favorite", back_populates="user")
 
     def __init__(self, *args, **kwargs):
         """initializes user"""
         super().__init__(*args, **kwargs)
-
-    def __setattr__(self, name, value):
-        """sets a password with md5 encryption"""
-        if name == "password":
-            value = md5(value.encode()).hexdigest()
-        super().__setattr__(name, value)
