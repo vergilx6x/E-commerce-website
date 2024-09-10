@@ -24,7 +24,7 @@ class DBStorage:
     def __init__(self):
 
         mysql_user = "admin"
-        mysql_pwd = ""
+        mysql_pwd = "Testpassword6."
         mysql_host = "localhost"
         mysql_db = "website_db"
         self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.

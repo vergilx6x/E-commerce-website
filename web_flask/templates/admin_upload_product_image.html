@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Product Image{% endblock %}
+
+{% block content %}
+    <h1>Upload Product Image</h1>
+    <form action="{{ url_for('upload_product_image', product_id=product_id) }}" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="file" class="form-label">Product Image:</label>
+            <input type="file" id="file" name="file" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Upload Image</button>
+    </form>
+{% endblock %}
