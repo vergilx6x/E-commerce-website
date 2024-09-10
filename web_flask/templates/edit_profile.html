@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Profile - E-commerce{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Edit Profile</h2>
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" value="{{ user.email }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username" value="{{ user.username }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Profile Image</label>
+            <input type="file" class="form-control" id="image" name="image">
+            {% if user.image_url %}
+                <img src="{{ user.image_url }}" alt="Profile Image" style="width:150px; margin-top:10px;">
+            {% endif %}
+        </div>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+    </form>
+</div>
+{% endblock %}

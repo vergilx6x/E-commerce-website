@@ -1,30 +1,36 @@
 {% extends "base.html" %}
 
-{% block title %}Category - E-commerce{% endblock %}
+{% block title %}Category - E-Shop{% endblock %}
 
 {% block content %}
-    <h2>Category: {{ category.name }}</h2>
+<div class="container">
+    <h2 class="mb-4">Category: {{ category.name }}</h2>
     {% if products %}
         <div class="row">
             {% for product in products %}
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <img src="{{ url_for('static', filename='images/' ~ product.image) }}" class="card-img-top" alt="{{ product.name }}">
+                <div class="col-md-4 mb-4">
+                    <div class="card border-light shadow-sm">
+                        <img src="{{ product.image_url or url_for('static', filename='images/' ~ product.image) }}" class="card-img-top" alt="{{ product.name }}">
                         <div class="card-body">
                             <h5 class="card-title">{{ product.name }}</h5>
                             <p class="card-text">${{ product.price }}</p>
-                            <form action="{{ url_for('add_to_cart', product_id=product.id) }}" method="post">
-                                <button type="submit" class="btn btn-primary">Add to Cart</button>
-                            </form>
-                            <form action="{{ url_for('add_to_favorites', product_id=product.id) }}" method="post">
-                                <button type="submit" class="btn btn-secondary">Add to Favorites</button>
-                            </form>
+                            <div class="d-flex">
+                                <form action="{{ url_for('add_to_cart', product_id=product.id) }}" method="post" class="me-2">
+                                    <button type="submit" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                                </form>
+                                <form action="{{ url_for('add_to_favorites', product_id=product.id) }}" method="post">
+                                    <button type="submit" class="btn btn-secondary"><i class="fas fa-heart"></i> Add to Favorites</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             {% endfor %}
         </div>
     {% else %}
-        <p>No products found in this category.</p>
+        <div class="alert alert-info" role="alert">
+            No products found in this category.
+        </div>
     {% endif %}
+</div>
 {% endblock %}

@@ -21,7 +21,7 @@ class User(BaseModel, Base):
     address = Column(String(128), nullable=True)
     postal_code = Column(String(60), nullable=True)
     
-    favorites = relationship("Favorite", back_populates="user")
+    favorites = relationship("Favorite", back_populates="user", cascade="all, delete-orphan")
     carts = relationship("Cart", backref="user", cascade="all, delete-orphan")
 
     def __init__(self, *args, **kwargs):

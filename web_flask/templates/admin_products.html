@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %}Admin Manage Products{% endblock %}
+{% block title %}Admin Manage Products - E-Shop{% endblock %}
 
 {% block content %}
 <div class="container">
-    <h2>Manage Products</h2>
-    <table class="table">
+    <h2 class="mb-4">Manage Products</h2>
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>ID</th>
@@ -21,11 +21,11 @@
             <tr>
                 <td>{{ product.id }}</td>
                 <td>{{ product.name }}</td>
-                <td>{{ product.price }}</td>
+                <td>${{ product.price }}</td>
                 <td>{{ product.category.name }}</td>
                 <td>
                     {% if product.image_url %}
-                        <img src="{{ product.image_url }}" alt="Product Image" style="width:100px;">
+                        <img src="{{ product.image_url }}" alt="Product Image" style="width:100px; height:auto;">
                     {% else %}
                         No image
                     {% endif %}
@@ -34,10 +34,10 @@
                     <form action="{{ url_for('admin_products') }}" method="POST" class="d-inline">
                         <input type="hidden" name="product_id" value="{{ product.id }}">
                         <input type="hidden" name="action" value="delete">
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</button>
                     </form>
-                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#editProductModal{{ product.id }}">Edit</button>
-                    <a href="{{ url_for('upload_product_image', product_id=product.id) }}" class="btn btn-secondary">Upload Image</a>
+                    <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#editProductModal{{ product.id }}"><i class="fas fa-edit"></i> Edit</button>
+                    <a href="{{ url_for('upload_product_image', product_id=product.id) }}" class="btn btn-secondary btn-sm"><i class="fas fa-image"></i> Upload Image</a>
                 </td>
             </tr>
             {% endfor %}
@@ -45,32 +45,30 @@
     </table>
 </div>
 
-<!-- Edit Product Modal -->
+<!-- Edit Product Modals -->
 {% for product in products %}
-<div class="modal fade" id="editProductModal{{ product.id }}" tabindex="-1" role="dialog" aria-labelledby="editProductModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+<div class="modal fade" id="editProductModal{{ product.id }}" tabindex="-1" aria-labelledby="editProductModalLabel{{ product.id }}" aria-hidden="true">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="editProductModalLabel">Edit Product</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <h5 class="modal-title" id="editProductModalLabel{{ product.id }}">Edit Product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="{{ url_for('admin_products') }}" method="POST">
                 <div class="modal-body">
                     <input type="hidden" name="product_id" value="{{ product.id }}">
                     <input type="hidden" name="action" value="edit">
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" name="name" class="form-control" value="{{ product.name }}" required>
+                    <div class="mb-3">
+                        <label for="name{{ product.id }}" class="form-label">Name:</label>
+                        <input type="text" id="name{{ product.id }}" name="name" class="form-control" value="{{ product.name }}" required>
                     </div>
-                    <div class="form-group">
-                        <label for="price">Price:</label>
-                        <input type="number" step="0.01" name="price" class="form-control" value="{{ product.price }}" required>
+                    <div class="mb-3">
+                        <label for="price{{ product.id }}" class="form-label">Price:</label>
+                        <input type="number" step="0.01" id="price{{ product.id }}" name="price" class="form-control" value="{{ product.price }}" required>
                     </div>
-                    <div class="form-group">
-                        <label for="category_id">Category:</label>
-                        <select name="category_id" class="form-control">
+                    <div class="mb-3">
+                        <label for="category_id{{ product.id }}" class="form-label">Category:</label>
+                        <select id="category_id{{ product.id }}" name="category_id" class="form-control">
                             {% for category in categories %}
                                 <option value="{{ category.id }}" {% if category.id == product.category_id %}selected{% endif %}>{{ category.name }}</option>
                             {% endfor %}
@@ -78,7 +76,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Save changes</button>
                 </div>
             </form>

@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
 
-{% block title %}Admin Dashboard{% endblock %}
+{% block title %}Admin Dashboard - E-Shop{% endblock %}
 
 {% block content %}
 <div class="container">
-    <h2>Admin Dashboard</h2>
+    <h2 class="mb-4">Admin Dashboard</h2>
     <div class="list-group">
-        <a href="{{ url_for('admin_users') }}" class="list-group-item list-group-item-action">
-            Manage Users
+        <a href="{{ url_for('admin_users') }}" class="list-group-item list-group-item-action list-group-item-light">
+            <i class="fas fa-users me-2"></i> Manage Users
         </a>
-        <a href="{{ url_for('admin_products') }}" class="list-group-item list-group-item-action">
-            Manage Products
+        <a href="{{ url_for('admin_products') }}" class="list-group-item list-group-item-action list-group-item-light">
+            <i class="fas fa-box me-2"></i> Manage Products
         </a>
-        <!-- Removed the placeholder product_id and updated the link -->
-        <a href="{{ url_for('upload_product_image', product_id='dummy') }}" class="list-group-item list-group-item-action">
-            Upload Product Images
+        <!-- Updated link with a more descriptive placeholder -->
+        <a href="{{ url_for('upload_product_image', product_id='placeholder') }}" class="list-group-item list-group-item-action list-group-item-light">
+            <i class="fas fa-image me-2"></i> Upload Product Images
         </a>
     </div>
 </div>

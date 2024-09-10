@@ -13,7 +13,7 @@ import os
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key_here'
 
-UPLOAD_FOLDER = os.path.join('static', 'uploads')
+UPLOAD_FOLDER = os.path.join('web_flask','static', 'uploads')
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
@@ -21,15 +21,9 @@ if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
 def allowed_file(filename):
+    """Check if the file extension is allowed."""
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-def save_image(file):
-    if file and allowed_file(file.filename):
-        filename = secure_filename(file.filename)
-        file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-        file.save(file_path)
-        return url_for('static', filename='uploads/' + filename)
-    return None
 
 @app.teardown_appcontext
 def close_db(error):
@@ -37,9 +31,19 @@ def close_db(error):
 
 @app.route('/home', strict_slashes=False)
 def home():
-    products = storage.all(Product).values()
+    # Fetch all categories
     categories = storage.all(Category).values()
-    return render_template('home.html', categories=categories, new_products=products)
+    
+    # Fetch all products
+    all_products = list(storage.all(Product).values())
+    
+    # Sort products by creation date in descending order
+    all_products.sort(key=lambda p: p.created_at, reverse=True)
+    
+    # Get the 10 most recent products
+    new_products = all_products[:10]
+    
+    return render_template('home.html', categories=categories, all_products=all_products, new_products=new_products)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -78,6 +82,7 @@ def login():
             flash('Login failed. Check your username and/or password.', 'error')
     
     return render_template('login.html')
+
 
 @app.route('/dashboard')
 def dashboard():
@@ -179,7 +184,7 @@ def add_to_cart(product_id):
     else:
         flash('You need to log in to add items to your cart.', 'warning')
     
-    return redirect(url_for('home'))
+    return redirect(url_for('cart'))
 
 @app.route('/category/<string:category_id>')
 def category(category_id):
@@ -321,9 +326,10 @@ def upload_product_image(product_id):
     if request.method == 'POST':
         file = request.files.get('file')
         if file and allowed_file(file.filename):
-            image_url = save_image(file)
             product = storage.get(Product, product_id)
             if product:
+                # Use the product's name for the image file
+                image_url = save_image(file, product.id)
                 product.image_url = image_url
                 storage.save()
                 flash('Image successfully uploaded and associated with product.', 'success')
@@ -332,6 +338,40 @@ def upload_product_image(product_id):
             return redirect(url_for('admin_products'))
 
     return render_template('admin_upload_product_image.html', product_id=product_id)
+
+
+def save_image(file, product_id):
+    if file and allowed_file(file.filename):
+        # Sanitize the product_id to ensure it's a valid filename
+        sanitized_name = secure_filename(product_id)
+        # Extract the file extension from the uploaded file
+        file_extension = os.path.splitext(file.filename)[1].lower()
+        # Construct the filename with the proper extension
+        filename = f"{sanitized_name}{file_extension}"
+        file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        file.save(file_path)
+        # Return the URL to access the image
+        return url_for('static', filename='uploads/' + filename)
+    return None
+
+@app.route('/edit_profile', methods=['GET', 'POST'])
+def edit_profile():
+    if 'user_id' in session:
+        user = storage.get(User, session['user_id'])
+        if request.method == 'POST':
+            user.email = request.form.get('email')
+            user.username = request.form.get('username')
+            image = request.files.get('image')
+            if image:
+                user.image_url = save_image(image)
+            storage.save()
+            flash('Profile updated successfully.', 'success')
+            return redirect(url_for('user_profile'))
+        return render_template('edit_profile.html', user=user)
+    else:
+        flash('You need to log in to edit your profile.', 'warning')
+        return redirect(url_for('login'))
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

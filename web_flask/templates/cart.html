@@ -10,9 +10,9 @@
             {% for item in cart_items %}
             <div class="col-md-4 mb-4">
                 <div class="card border-light shadow-sm">
-                    <img src="{{ item.product.image_url or url_for('static', filename='default_product_image.jpg') }}" class="card-img-top" alt="{{ item.product.title }}">
+                    <img src="{{ item.product.image_url or url_for('static', filename='default_product_image.jpg') }}" class="card-img-top" alt="{{ item.product.name }}">
                     <div class="card-body">
-                        <h5 class="card-title">{{ item.product.title }}</h5>
+                        <h5 class="card-title">{{ item.product.name }}</h5>
                         <p class="card-text">${{ item.product.price }}</p>
                         <form action="{{ url_for('remove_from_cart', product_id=item.product.id) }}" method="post" class="d-inline">
                             <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> Remove</button>

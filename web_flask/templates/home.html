@@ -27,26 +27,51 @@
 
 <div class="container mb-4">
     <h2 class="mb-4">Categories</h2>
-    <div class="row">
-        {% for category in categories %}
-        <div class="col-md-4 mb-4">
-            <div class="card border-light shadow-sm">
-                <img src="{{ category.image_url or url_for('static', filename='default_category_image.jpg') }}" class="card-img-top" alt="{{ category.name }}">
+    <div class="overflow-auto">
+        <div class="d-flex flex-nowrap">
+            {% for category in categories %}
+            <div class="card border-light shadow-sm me-3" style="flex: 0 0 auto; width: 18rem;">
+                <img src="{{url_for('static', filename='default_category_image.jpg') }}" class="card-img-top" alt="{{ category.name }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ category.name }}</h5>
                     <p class="card-text">{{ category.description }}</p>
                     <a href="{{ url_for('category', category_id=category.id) }}" class="btn btn-primary">View Products</a>
                 </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
 </div>
 
-<div class="container">
+<div class="container mb-4">
     <h2 class="mb-4">New Products</h2>
+    <div class="overflow-auto">
+        <div class="d-flex flex-nowrap">
+            {% for product in new_products %}
+            <div class="card border-light shadow-sm me-3" style="flex: 0 0 auto; width: 18rem;">
+                <img src="{{product.image_url or url_for('static', filename='default_product_image.jpg') }}" class="card-img-top" alt="{{ product.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">${{ product.price }}</p>
+                    <div class="d-flex">
+                        <form action="{{ url_for('add_to_cart', product_id=product.id) }}" method="post" class="me-2">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                        </form>
+                        <form action="{{ url_for('add_to_favorites', product_id=product.id) }}" method="post">
+                            <button type="submit" class="btn btn-secondary"><i class="fas fa-heart"></i> Add to Favorites</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="container mb-4">
+    <h2 class="mb-4">All Products</h2>
     <div class="row">
-        {% for product in new_products %}
+        {% for product in all_products %}
         <div class="col-md-3 mb-4">
             <div class="card border-light shadow-sm">
                 <img src="{{ product.image_url or url_for('static', filename='default_product_image.jpg') }}" class="card-img-top" alt="{{ product.name }}">
