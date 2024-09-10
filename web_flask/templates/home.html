@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Home - E-commerce{% endblock %}
+{% block title %}Home - E-Shop{% endblock %}
 
 {% block content %}
 <div id="carouselExample" class="carousel slide mb-4">
@@ -31,7 +31,7 @@
         {% for category in categories %}
         <div class="col-md-4 mb-4">
             <div class="card border-light shadow-sm">
-                <img src="{{ category.image}}" class="card-img-top" alt="{{ category.name }}">
+                <img src="{{ category.image_url or url_for('static', filename='default_category_image.jpg') }}" class="card-img-top" alt="{{ category.name }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ category.name }}</h5>
                     <p class="card-text">{{ category.description }}</p>
@@ -49,16 +49,18 @@
         {% for product in new_products %}
         <div class="col-md-3 mb-4">
             <div class="card border-light shadow-sm">
-                <img src="{{ product.image}}" class="card-img-top" alt="{{ product.title }}">
+                <img src="{{ product.image_url or url_for('static', filename='default_product_image.jpg') }}" class="card-img-top" alt="{{ product.name }}">
                 <div class="card-body">
-                    <h5 class="card-title">{{ product.title }}</h5>
+                    <h5 class="card-title">{{ product.name }}</h5>
                     <p class="card-text">${{ product.price }}</p>
-                    <form action="{{ url_for('add_to_cart', product_id=product.id) }}" method="post" class="d-inline">
-                        <button type="submit" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-                    </form>
-                    <form action="{{ url_for('add_to_favorites', product_id=product.id) }}" method="post" class="d-inline ms-2">
-                        <button type="submit" class="btn btn-secondary"><i class="fas fa-heart"></i> Add to Favorites</button>
-                    </form>
+                    <div class="d-flex">
+                        <form action="{{ url_for('add_to_cart', product_id=product.id) }}" method="post" class="me-2">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                        </form>
+                        <form action="{{ url_for('add_to_favorites', product_id=product.id) }}" method="post">
+                            <button type="submit" class="btn btn-secondary"><i class="fas fa-heart"></i> Add to Favorites</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

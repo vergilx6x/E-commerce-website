@@ -1,57 +1,56 @@
-#!/usr/bin/python3
-""" Starts a Flask Web Application """
-
-import os
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 from werkzeug.utils import secure_filename
 from werkzeug.security import generate_password_hash, check_password_hash
 from models import storage
 from models.product import Product
-from models.category import Category
 from models.user import User
 from models.cart import Cart
 from models.cart_item import Cart_item
 from models.favorite import Favorite
+from models.category import Category
+import os
 
-# Initialize Flask app
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key_here'
 
-# Configure upload folder and allowed extensions
 UPLOAD_FOLDER = os.path.join('static', 'uploads')
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-# Create upload folder if it doesn't exist
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
 def allowed_file(filename):
-    """ Check if the file has an allowed extension """
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+def save_image(file):
+    if file and allowed_file(file.filename):
+        filename = secure_filename(file.filename)
+        file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        file.save(file_path)
+        return url_for('static', filename='uploads/' + filename)
+    return None
 
 @app.teardown_appcontext
 def close_db(error):
-    """ Remove the current SQLAlchemy Session """
     storage.close()
 
 @app.route('/home', strict_slashes=False)
 def home():
-    """ Displays a HTML page with a list of products and categories """
     products = storage.all(Product).values()
     categories = storage.all(Category).values()
-    trending_products = []  # Add logic to fetch trending products if needed
-    return render_template('home.html', categories=categories, new_products=products, trending_products=trending_products)
+    return render_template('home.html', categories=categories, new_products=products)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
-    """ Register a new user """
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
         username = request.form['username']
+        image = request.files.get('image')
         hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
-        new_user = User(email=email, password=hashed_password, username=username)
+        image_url = save_image(image) if image else None
+        new_user = User(email=email, password=hashed_password, username=username, image_url=image_url)
         
         try:
             storage.new(new_user)
@@ -66,7 +65,6 @@ def register():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    """ Log in an existing user """
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -83,7 +81,6 @@ def login():
 
 @app.route('/dashboard')
 def dashboard():
-    """ Display the user dashboard """
     if 'user_id' in session:
         user = storage.get(User, session['user_id'])
         return render_template('dashboard.html', user=user)
@@ -93,12 +90,17 @@ def dashboard():
 
 @app.route('/cart')
 def cart():
-    """ Display the user's shopping cart """
     if 'user_id' in session:
         user = storage.get(User, session['user_id'])
         if user:
-            cart_items = storage.all(Cart_item)
-            user_cart_items = [item for item in cart_items.values() if item.cart.user_id == user.id]
+            cart_items = storage.all(Cart_item).values()
+            user_cart_items = []
+            
+            for item in cart_items:
+                cart = storage.get(Cart, item.cart_id)
+                if cart and cart.user_id == user.id:
+                    user_cart_items.append(item)
+            
             return render_template('cart.html', cart_items=user_cart_items)
         else:
             flash('User not found. Please log in again.', 'error')
@@ -107,9 +109,9 @@ def cart():
         flash('You need to log in to access the cart.', 'warning')
         return redirect(url_for('login'))
 
+
 @app.route('/favorites')
 def favorites():
-    """ Display the user's favorite products """
     if 'user_id' in session:
         user = storage.get(User, session['user_id'])
         favorite_items = storage.all(Favorite)
@@ -121,7 +123,6 @@ def favorites():
 
 @app.route('/user_profile')
 def user_profile():
-    """ Display the user's profile """
     if 'user_id' in session:
         user = storage.get(User, session['user_id'])
         return render_template('user_profile.html', user=user)
@@ -131,7 +132,6 @@ def user_profile():
 
 @app.route('/remove_from_cart/<string:product_id>')
 def remove_from_cart(product_id):
-    """ Remove a product from the cart """
     if 'user_id' in session:
         user = storage.get(User, session['user_id'])
         if user:
@@ -151,7 +151,6 @@ def remove_from_cart(product_id):
 
 @app.route('/add_to_cart/<string:product_id>', methods=['POST'])
 def add_to_cart(product_id):
-    """ Add a product to the cart """
     if 'user_id' in session:
         user = storage.get(User, session['user_id'])
         if user:
@@ -184,7 +183,6 @@ def add_to_cart(product_id):
 
 @app.route('/category/<string:category_id>')
 def category(category_id):
-    """ Displays products in a specific category """
     category = storage.get(Category, category_id)
     if category:
         products = [product for product in storage.all(Product).values() if product.category_id == category_id]
@@ -195,7 +193,6 @@ def category(category_id):
 
 @app.route('/add_to_favorites/<string:product_id>', methods=['POST'])
 def add_to_favorites(product_id):
-    """ Add a product to favorites """
     if 'user_id' in session:
         user = storage.get(User, session['user_id'])
         if user:
@@ -221,7 +218,6 @@ def add_to_favorites(product_id):
 
 @app.route('/remove_from_favorites/<string:product_id>')
 def remove_from_favorites(product_id):
-    """ Remove a product from favorites """
     if 'user_id' in session:
         user = storage.get(User, session['user_id'])
         if user:
@@ -241,23 +237,18 @@ def remove_from_favorites(product_id):
 
 @app.route('/logout')
 def logout():
-    """ Log out the user """
     session.pop('user_id', None)
     flash('You have been logged out.', 'info')
     return redirect(url_for('home'))
 
-### Admin routes ###
-
 @app.route('/admin', methods=['GET'])
 def admin_dashboard():
-    """ Admin dashboard to manage products, users, and uploads """
     users = storage.all(User).values()
     products = storage.all(Product).values()
     return render_template('admin_dashboard.html', users=users, products=products)
 
 @app.route('/admin/users', methods=['GET', 'POST'])
 def admin_users():
-    """ Admin route to manage users """
     if request.method == 'POST':
         user_id = request.form.get('user_id')
         action = request.form.get('action')
@@ -274,10 +265,13 @@ def admin_users():
         if action == 'edit' and user_id:
             email = request.form.get('email')
             username = request.form.get('username')
+            image = request.files.get('image')
             user = storage.get(User, user_id)
             if user:
                 user.email = email
                 user.username = username
+                if image:
+                    user.image_url = save_image(image)
                 storage.save()
                 flash('User updated successfully.', 'success')
             else:
@@ -288,7 +282,6 @@ def admin_users():
 
 @app.route('/admin/products', methods=['GET', 'POST'])
 def admin_products():
-    """ Admin route to manage products """
     if request.method == 'POST':
         product_id = request.form.get('product_id')
         action = request.form.get('action')
@@ -306,11 +299,14 @@ def admin_products():
             name = request.form.get('name')
             price = request.form.get('price')
             category_id = request.form.get('category_id')
+            image = request.files.get('image')
             product = storage.get(Product, product_id)
             if product:
                 product.name = name
                 product.price = price
                 product.category_id = category_id
+                if image:
+                    product.image_url = save_image(image)
                 storage.save()
                 flash('Product updated successfully.', 'success')
             else:
@@ -322,30 +318,17 @@ def admin_products():
 
 @app.route('/admin/upload_product_image/<string:product_id>', methods=['GET', 'POST'])
 def upload_product_image(product_id):
-    """ Admin route to upload product images """
     if request.method == 'POST':
-        if 'file' not in request.files:
-            flash('No file part', 'error')
-            return redirect(request.url)
-
-        file = request.files['file']
-        if file.filename == '':
-            flash('No selected file', 'error')
-            return redirect(request.url)
-
+        file = request.files.get('file')
         if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-            file.save(file_path)
-            
+            image_url = save_image(file)
             product = storage.get(Product, product_id)
             if product:
-                product.image_url = url_for('static', filename='uploads/' + filename)
+                product.image_url = image_url
                 storage.save()
                 flash('Image successfully uploaded and associated with product.', 'success')
             else:
                 flash('Product not found.', 'error')
-            
             return redirect(url_for('admin_products'))
 
     return render_template('admin_upload_product_image.html', product_id=product_id)

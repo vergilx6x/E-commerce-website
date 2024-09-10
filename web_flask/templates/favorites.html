@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Favorites - E-commerce{% endblock %}
+{% block title %}Favorites - E-Shop{% endblock %}
 
 {% block content %}
 <div class="container">
@@ -10,7 +10,7 @@
             {% for item in favorite_items %}
             <div class="col-md-3 mb-4">
                 <div class="card border-light shadow-sm">
-                    <img src="{{ item.product.image_url }}" class="card-img-top" alt="{{ item.product.title }}">
+                    <img src="{{ item.product.image_url or url_for('static', filename='default_product_image.jpg') }}" class="card-img-top" alt="{{ item.product.title }}">
                     <div class="card-body">
                         <h5 class="card-title">{{ item.product.title }}</h5>
                         <p class="card-text">${{ item.product.price }}</p>
@@ -27,7 +27,7 @@
             </div>
             {% endfor %}
         {% else %}
-            <p>You have no favorite items.</p>
+            <p class="text-muted">You have no favorite items.</p>
         {% endif %}
     </div>
 </div>
