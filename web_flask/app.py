@@ -13,7 +13,7 @@ import os
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key_here'
 
-UPLOAD_FOLDER = os.path.join('web_flask','static', 'uploads')
+UPLOAD_FOLDER = os.path.join('web_flask', 'static', 'uploads')
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
@@ -23,7 +23,6 @@ if not os.path.exists(UPLOAD_FOLDER):
 def allowed_file(filename):
     """Check if the file extension is allowed."""
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
 
 @app.teardown_appcontext
 def close_db(error):
@@ -83,7 +82,6 @@ def login():
     
     return render_template('login.html')
 
-
 @app.route('/dashboard')
 def dashboard():
     if 'user_id' in session:
@@ -100,12 +98,12 @@ def cart():
         if user:
             cart_items = storage.all(Cart_item).values()
             user_cart_items = []
-            
             for item in cart_items:
                 cart = storage.get(Cart, item.cart_id)
-                if cart and cart.user_id == user.id:
+                if cart is not None and cart.user_id == user.id:
                     user_cart_items.append(item)
-            
+                elif cart is None:
+                    print(f"Warning: Cart with ID {item.cart_id} not found.")
             return render_template('cart.html', cart_items=user_cart_items)
         else:
             flash('User not found. Please log in again.', 'error')
@@ -119,8 +117,8 @@ def cart():
 def favorites():
     if 'user_id' in session:
         user = storage.get(User, session['user_id'])
-        favorite_items = storage.all(Favorite)
-        user_favorites = [item for item in favorite_items.values() if item.user_id == user.id]
+        favorite_items = storage.all(Favorite).values()
+        user_favorites = [item for item in favorite_items if item.user_id == user.id]
         return render_template('favorites.html', favorite_items=user_favorites)
     else:
         flash('You need to log in to access favorites.', 'warning')
@@ -140,7 +138,7 @@ def remove_from_cart(product_id):
     if 'user_id' in session:
         user = storage.get(User, session['user_id'])
         if user:
-            cart_item = next((item for item in storage.all(Cart_item).values() if item.product_id == product_id and item.cart.user_id == user.id), None)
+            cart_item = next((item for item in storage.all(Cart_item).values() if item.product_id == product_id and storage.get(Cart, item.cart_id).user_id == user.id), None)
             if cart_item:
                 storage.delete(cart_item)
                 storage.save()
@@ -255,9 +253,9 @@ def admin_dashboard():
 @app.route('/admin/users', methods=['GET', 'POST'])
 def admin_users():
     if request.method == 'POST':
-        user_id = request.form.get('user_id')
         action = request.form.get('action')
-        
+        user_id = request.form.get('user_id')
+
         if action == 'delete' and user_id:
             user = storage.get(User, user_id)
             if user:
@@ -267,21 +265,73 @@ def admin_users():
             else:
                 flash('User not found.', 'error')
 
-        if action == 'edit' and user_id:
+        elif action == 'edit' and user_id:
             email = request.form.get('email')
             username = request.form.get('username')
+            first_name = request.form.get('first_name')
+            last_name = request.form.get('last_name')
+            phone_number = request.form.get('phone_number')
+            country = request.form.get('country')
+            city = request.form.get('city')
+            address = request.form.get('address')
+            postal_code = request.form.get('postal_code')
             image = request.files.get('image')
+
             user = storage.get(User, user_id)
             if user:
                 user.email = email
                 user.username = username
+                user.first_name = first_name
+                user.last_name = last_name
+                user.phone_number = phone_number
+                user.country = country
+                user.city = city
+                user.address = address
+                user.postal_code = postal_code
+
                 if image:
                     user.image_url = save_image(image)
+                
                 storage.save()
                 flash('User updated successfully.', 'success')
             else:
                 flash('User not found.', 'error')
+
+        elif action == 'add':
+            email = request.form.get('email')
+            username = request.form.get('username')
+            password = request.form.get('password')
+            first_name = request.form.get('first_name')
+            last_name = request.form.get('last_name')
+            phone_number = request.form.get('phone_number')
+            country = request.form.get('country')
+            city = request.form.get('city')
+            address = request.form.get('address')
+            postal_code = request.form.get('postal_code')
+            image = request.files.get('image')
+
+            if storage.get(User, email=email):
+                flash('User with this email already exists.', 'error')
+            else:
+                new_user = User(
+                    email=email,
+                    username=username,
+                    password=password,  # You should hash the password before storing it
+                    first_name=first_name,
+                    last_name=last_name,
+                    phone_number=phone_number,
+                    country=country,
+                    city=city,
+                    address=address,
+                    postal_code=postal_code
+                )
+                if image:
+                    new_user.image_url = save_image(image)
                 
+                storage.new(new_user)
+                storage.save()
+                flash('User added successfully.', 'success')
+
     users = storage.all(User).values()
     return render_template('admin_users.html', users=users)
 
@@ -291,6 +341,7 @@ def admin_products():
         product_id = request.form.get('product_id')
         action = request.form.get('action')
 
+        # Handle Delete Action
         if action == 'delete' and product_id:
             product = storage.get(Product, product_id)
             if product:
@@ -300,15 +351,20 @@ def admin_products():
             else:
                 flash('Product not found.', 'error')
 
+        # Handle Edit Action
         if action == 'edit' and product_id:
             name = request.form.get('name')
             price = request.form.get('price')
+            description = request.form.get('description')
+            quantity = request.form.get('quantity')
             category_id = request.form.get('category_id')
             image = request.files.get('image')
             product = storage.get(Product, product_id)
             if product:
                 product.name = name
                 product.price = price
+                product.description = description
+                product.quantity = quantity
                 product.category_id = category_id
                 if image:
                     product.image_url = save_image(image)
@@ -317,9 +373,31 @@ def admin_products():
             else:
                 flash('Product not found.', 'error')
 
+        # Handle Add Product Action
+        if action == 'add':
+            name = request.form.get('name')
+            price = request.form.get('price')
+            description = request.form.get('description')
+            quantity = request.form.get('quantity')
+            category_id = request.form.get('category_id')
+            image = request.files.get('image')
+            new_product = Product(
+                name=name,
+                price=price,
+                description=description,
+                quantity=quantity,
+                category_id=category_id
+            )
+            if image:
+                new_product.image_url = save_image(image)
+            storage.new(new_product)
+            storage.save()
+            flash('Product added successfully.', 'success')
+
     products = storage.all(Product).values()
     categories = storage.all(Category).values()
     return render_template('admin_products.html', products=products, categories=categories)
+
 
 @app.route('/admin/upload_product_image/<string:product_id>', methods=['GET', 'POST'])
 def upload_product_image(product_id):
@@ -329,7 +407,7 @@ def upload_product_image(product_id):
             product = storage.get(Product, product_id)
             if product:
                 # Use the product's name for the image file
-                image_url = save_image(file, product.id)
+                image_url = save_image(file, product_id)
                 product.image_url = image_url
                 storage.save()
                 flash('Image successfully uploaded and associated with product.', 'success')
@@ -338,21 +416,6 @@ def upload_product_image(product_id):
             return redirect(url_for('admin_products'))
 
     return render_template('admin_upload_product_image.html', product_id=product_id)
-
-
-def save_image(file, product_id):
-    if file and allowed_file(file.filename):
-        # Sanitize the product_id to ensure it's a valid filename
-        sanitized_name = secure_filename(product_id)
-        # Extract the file extension from the uploaded file
-        file_extension = os.path.splitext(file.filename)[1].lower()
-        # Construct the filename with the proper extension
-        filename = f"{sanitized_name}{file_extension}"
-        file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-        file.save(file_path)
-        # Return the URL to access the image
-        return url_for('static', filename='uploads/' + filename)
-    return None
 
 @app.route('/edit_profile', methods=['GET', 'POST'])
 def edit_profile():
@@ -363,7 +426,7 @@ def edit_profile():
             user.username = request.form.get('username')
             image = request.files.get('image')
             if image:
-                user.image_url = save_image(image)
+                user.image_url = save_image(image, user.id)
             storage.save()
             flash('Profile updated successfully.', 'success')
             return redirect(url_for('user_profile'))
@@ -372,6 +435,19 @@ def edit_profile():
         flash('You need to log in to edit your profile.', 'warning')
         return redirect(url_for('login'))
 
+def save_image(file, identifier=None):
+    if file and allowed_file(file.filename):
+        # Sanitize the identifier to ensure it's a valid filename
+        sanitized_name = secure_filename(identifier) if identifier else secure_filename(file.filename)
+        # Extract the file extension from the uploaded file
+        file_extension = os.path.splitext(file.filename)[1].lower()
+        # Construct the filename with the proper extension
+        filename = f"{sanitized_name}{file_extension}"
+        file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        file.save(file_path)
+        # Return the URL to access the image
+        return url_for('static', filename='uploads/' + filename)
+    return None
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

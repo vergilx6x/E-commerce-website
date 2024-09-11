@@ -20,6 +20,7 @@ class User(BaseModel, Base):
     city = Column(String(128), nullable=True)
     address = Column(String(128), nullable=True)
     postal_code = Column(String(60), nullable=True)
+    image_url = Column(String(255), nullable=True)
     
     favorites = relationship("Favorite", back_populates="user", cascade="all, delete-orphan")
     carts = relationship("Cart", backref="user", cascade="all, delete-orphan")

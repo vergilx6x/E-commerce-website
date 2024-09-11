@@ -3,52 +3,143 @@
 {% block title %}Admin Manage Users - E-Shop{% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container mt-4">
     <h2 class="mb-4">Manage Users</h2>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Email</th>
-                <th>Username</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for user in users %}
-            <tr>
-                <td>{{ user.id }}</td>
-                <td>{{ user.email }}</td>
-                <td>{{ user.username }}</td>
-                <td>
-                    <!-- Delete User Form -->
-                    <form action="{{ url_for('admin_users') }}" method="POST" class="d-inline">
-                        <input type="hidden" name="user_id" value="{{ user.id }}">
-                        <input type="hidden" name="action" value="delete">
-                        <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</button>
-                    </form>
-                    <!-- Edit User Button -->
-                    <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#editUserModal{{ user.id }}"><i class="fas fa-edit"></i> Edit</button>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+
+    <!-- Add User Form -->
+    <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+            <h4 class="card-title">Add New User</h4>
+        </div>
+        <div class="card-body">
+            <form action="{{ url_for('admin_users') }}" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="action" value="add">
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username:</label>
+                    <input type="text" id="username" name="username" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password:</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="first_name" class="form-label">First Name:</label>
+                    <input type="text" id="first_name" name="first_name" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="last_name" class="form-label">Last Name:</label>
+                    <input type="text" id="last_name" name="last_name" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="phone_number" class="form-label">Phone Number:</label>
+                    <input type="text" id="phone_number" name="phone_number" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="country" class="form-label">Country:</label>
+                    <input type="text" id="country" name="country" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="city" class="form-label">City:</label>
+                    <input type="text" id="city" name="city" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address:</label>
+                    <input type="text" id="address" name="address" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="postal_code" class="form-label">Postal Code:</label>
+                    <input type="text" id="postal_code" name="postal_code" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Upload Profile Image:</label>
+                    <input type="file" id="image" name="image" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">Add User</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Existing Users Table -->
+    <div class="card shadow-sm">
+        <div class="card-header">
+            <h4 class="card-title">Existing Users</h4>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Profile Image</th>
+                        <th>Email</th>
+                        <th>Username</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Phone Number</th>
+                        <th>Country</th>
+                        <th>City</th>
+                        <th>Address</th>
+                        <th>Postal Code</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td>
+                            {% if user.image_url %}
+                                <img src="{{ user.image_url }}" alt="Profile Image" style="width:100px; height:auto;">
+                            {% else %}
+                                <span class="text-muted">No image</span>
+                            {% endif %}
+                        </td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.first_name }}</td>
+                        <td>{{ user.last_name }}</td>
+                        <td>{{ user.phone_number }}</td>
+                        <td>{{ user.country }}</td>
+                        <td>{{ user.city }}</td>
+                        <td>{{ user.address }}</td>
+                        <td>{{ user.postal_code }}</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="User Actions">
+                                <!-- Delete User Form -->
+                                <form action="{{ url_for('admin_users') }}" method="POST" class="d-inline">
+                                    <input type="hidden" name="user_id" value="{{ user.id }}">
+                                    <input type="hidden" name="action" value="delete">
+                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</button>
+                                </form>
+                                <!-- Edit User Button -->
+                                <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#editUserModal{{ user.id }}"><i class="fas fa-edit"></i> Edit</button>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
 <!-- Edit User Modals -->
 {% for user in users %}
 <div class="modal fade" id="editUserModal{{ user.id }}" tabindex="-1" aria-labelledby="editUserModalLabel{{ user.id }}" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="editUserModalLabel{{ user.id }}">Edit User</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="{{ url_for('admin_users') }}" method="POST">
+            <form action="{{ url_for('admin_users') }}" method="POST" enctype="multipart/form-data">
                 <div class="modal-body">
                     <input type="hidden" name="user_id" value="{{ user.id }}">
                     <input type="hidden" name="action" value="edit">
+
+                    <!-- Edit User Details -->
                     <div class="mb-3">
                         <label for="email{{ user.id }}" class="form-label">Email:</label>
                         <input type="email" id="email{{ user.id }}" name="email" class="form-control" value="{{ user.email }}" required>
@@ -56,6 +147,41 @@
                     <div class="mb-3">
                         <label for="username{{ user.id }}" class="form-label">Username:</label>
                         <input type="text" id="username{{ user.id }}" name="username" class="form-control" value="{{ user.username }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="first_name{{ user.id }}" class="form-label">First Name:</label>
+                        <input type="text" id="first_name{{ user.id }}" name="first_name" class="form-control" value="{{ user.first_name }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="last_name{{ user.id }}" class="form-label">Last Name:</label>
+                        <input type="text" id="last_name{{ user.id }}" name="last_name" class="form-control" value="{{ user.last_name }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone_number{{ user.id }}" class="form-label">Phone Number:</label>
+                        <input type="text" id="phone_number{{ user.id }}" name="phone_number" class="form-control" value="{{ user.phone_number }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="country{{ user.id }}" class="form-label">Country:</label>
+                        <input type="text" id="country{{ user.id }}" name="country" class="form-control" value="{{ user.country }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="city{{ user.id }}" class="form-label">City:</label>
+                        <input type="text" id="city{{ user.id }}" name="city" class="form-control" value="{{ user.city }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="address{{ user.id }}" class="form-label">Address:</label>
+                        <input type="text" id="address{{ user.id }}" name="address" class="form-control" value="{{ user.address }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="postal_code{{ user.id }}" class="form-label">Postal Code:</label>
+                        <input type="text" id="postal_code{{ user.id }}" name="postal_code" class="form-control" value="{{ user.postal_code }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="image{{ user.id }}" class="form-label">Upload New Profile Image:</label>
+                        <input type="file" id="image{{ user.id }}" name="image" class="form-control">
+                        {% if user.image_url %}
+                            <img src="{{ user.image_url }}" alt="Profile Image" style="width:100px; height:auto;" class="mt-2">
+                        {% endif %}
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -67,4 +193,5 @@
     </div>
 </div>
 {% endfor %}
+
 {% endblock %}
