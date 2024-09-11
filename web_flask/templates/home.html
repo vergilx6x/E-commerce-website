@@ -31,7 +31,7 @@
         <div class="d-flex flex-nowrap">
             {% for category in categories %}
             <div class="card border-light shadow-sm me-3" style="flex: 0 0 auto; width: 18rem;">
-                <img src="{{url_for('static', filename='default_category_image.jpg') }}" class="card-img-top" alt="{{ category.name }}">
+                <img src="{{category.image_url or url_for('static', filename='default_category_image.jpg') }}" class="card-img-top" alt="{{ category.name }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ category.name }}</h5>
                     <p class="card-text">{{ category.description }}</p>
