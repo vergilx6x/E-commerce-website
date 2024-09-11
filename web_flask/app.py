@@ -76,20 +76,12 @@ def login():
         if user and check_password_hash(user.password, password):
             session['user_id'] = user.id
             flash('Login successful.', 'success')
-            return redirect(url_for('dashboard'))
+            return redirect(url_for('home'))
         else:
             flash('Login failed. Check your username and/or password.', 'error')
     
     return render_template('login.html')
 
-@app.route('/dashboard')
-def dashboard():
-    if 'user_id' in session:
-        user = storage.get(User, session['user_id'])
-        return render_template('dashboard.html', user=user)
-    else:
-        flash('You need to log in to access the dashboard.', 'warning')
-        return redirect(url_for('login'))
 
 @app.route('/cart')
 def cart():
@@ -450,4 +442,4 @@ def save_image(file, identifier=None):
     return None
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=3000, debug=True)
