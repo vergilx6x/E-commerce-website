@@ -93,7 +93,7 @@
                             {% if user.image_url %}
                                 <img src="{{ user.image_url }}" alt="Profile Image" style="width:100px; height:auto;">
                             {% else %}
-                                <span class="text-muted">No image</span>
+                                <img src="{{ url_for('static', filename='images/default_user.png') }}" alt="Default Profile Image" style="width:100px; height:auto;">
                             {% endif %}
                         </td>
                         <td>{{ user.email }}</td>
@@ -181,6 +181,8 @@
                         <input type="file" id="image{{ user.id }}" name="image" class="form-control">
                         {% if user.image_url %}
                             <img src="{{ user.image_url }}" alt="Profile Image" style="width:100px; height:auto;" class="mt-2">
+                        {% else %}
+                            <img src="{{ url_for('static', filename='images/default_user.png') }}" alt="Default Profile Image" style="width:100px; height:auto;" class="mt-2">
                         {% endif %}
                     </div>
                 </div>

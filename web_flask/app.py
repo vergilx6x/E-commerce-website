@@ -125,7 +125,7 @@ def user_profile():
         flash('You need to log in to access your profile.', 'warning')
         return redirect(url_for('login'))
 
-@app.route('/remove_from_cart/<string:product_id>')
+@app.route('/remove_from_cart/<string:product_id>', methods=['POST'])
 def remove_from_cart(product_id):
     if 'user_id' in session:
         user = storage.get(User, session['user_id'])
@@ -211,7 +211,7 @@ def add_to_favorites(product_id):
     
     return redirect(url_for('home'))
 
-@app.route('/remove_from_favorites/<string:product_id>')
+@app.route('/remove_from_favorites/<string:product_id>', methods=['POST'])
 def remove_from_favorites(product_id):
     if 'user_id' in session:
         user = storage.get(User, session['user_id'])
