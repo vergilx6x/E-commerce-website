@@ -49,9 +49,13 @@
         <div class="d-flex flex-nowrap">
             {% for product in new_products %}
             <div class="card border-light shadow-sm me-3" style="flex: 0 0 auto; width: 18rem;">
-                <img src="{{product.image_url or url_for('static', filename='default_product_image.jpg') }}" class="card-img-top" alt="{{ product.name }}">
+                <a href="{{ url_for('product_detail', product_id=product.id) }}">
+                    <img src="{{ product.image_url or url_for('static', filename='default_product_image.jpg') }}" class="card-img-top" alt="{{ product.name }}">
+                </a>
                 <div class="card-body">
-                    <h5 class="card-title">{{ product.name }}</h5>
+                    <a href="{{ url_for('product_detail', product_id=product.id) }}" class="text-decoration-none text-dark">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                    </a>
                     <p class="card-text">${{ product.price }}</p>
                     <div class="d-flex">
                         <form action="{{ url_for('add_to_cart', product_id=product.id) }}" method="post" class="me-2">
@@ -74,9 +78,13 @@
         {% for product in all_products %}
         <div class="col-md-3 mb-4">
             <div class="card border-light shadow-sm">
-                <img src="{{ product.image_url or url_for('static', filename='default_product_image.jpg') }}" class="card-img-top" alt="{{ product.name }}">
+                <a href="{{ url_for('product_detail', product_id=product.id) }}">
+                    <img src="{{ product.image_url or url_for('static', filename='default_product_image.jpg') }}" class="card-img-top" alt="{{ product.name }}">
+                </a>
                 <div class="card-body">
-                    <h5 class="card-title">{{ product.name }}</h5>
+                    <a href="{{ url_for('product_detail', product_id=product.id) }}" class="text-decoration-none text-dark">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                    </a>
                     <p class="card-text">${{ product.price }}</p>
                     <div class="d-flex">
                         <form action="{{ url_for('add_to_cart', product_id=product.id) }}" method="post" class="me-2">

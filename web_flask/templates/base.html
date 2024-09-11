@@ -20,17 +20,41 @@
         .footer {
             margin-top: auto;
         }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .header-search {
+            max-width: 500px;
+        }
+        .navbar-nav {
+            flex-direction: row;
+        }
+        .navbar-nav .nav-item {
+            margin-left: 15px;
+        }
+        .navbar-nav .nav-item:last-child {
+            margin-left: 30px;
+        }
     </style>
 </head>
 <body>
     <header class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="{{ url_for('home') }}">E-Shop</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+            <div class="d-flex w-100">
+                <!-- Left side: logo -->
+                <a class="navbar-brand" href="{{ url_for('home') }}">E-Shop</a>
+
+                <!-- Centered search form -->
+                <div style="padding-left: 90px; padding-top: 5px;" class="mx-auto">
+                    <form class="d-flex header-search" action="{{ url_for('search') }}" method="get">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query">
+                        <button class="btn btn-outline-primary" type="submit">Search</button>
+                    </form>
+                </div>
+
+                <!-- Right side: nav items -->
+                <ul class="navbar-nav d-flex flex-row ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('home') }}">Home</a>
                     </li>

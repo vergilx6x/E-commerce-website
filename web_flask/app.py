@@ -8,6 +8,7 @@ from models.cart import Cart
 from models.cart_item import Cart_item
 from models.favorite import Favorite
 from models.category import Category
+from flask import jsonify
 import os
 
 app = Flask(__name__)
@@ -28,6 +29,11 @@ def allowed_file(filename):
 def close_db(error):
     storage.close()
 
+@app.route('/product/<string:product_id>')
+def product_detail(product_id):
+    product = storage.get(Product, product_id)
+    return render_template('product_detail.html', product=product)
+
 @app.route('/home', strict_slashes=False)
 def home():
     # Fetch all categories
@@ -43,6 +49,7 @@ def home():
     new_products = all_products[:10]
     
     return render_template('home.html', categories=categories, all_products=all_products, new_products=new_products)
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -440,6 +447,22 @@ def save_image(file, identifier=None):
         # Return the URL to access the image
         return url_for('static', filename='uploads/' + filename)
     return None
+
+@app.route('/search', methods=['GET'])
+def search():
+    query = request.args.get('query')
+    if not query:
+        flash('Please enter a search query.', 'warning')
+        return redirect(url_for('home'))
+
+    # Search for products
+    products = [p for p in storage.all(Product).values() if query.lower() in p.name.lower()]
+
+    # Search for categories
+    categories = [c for c in storage.all(Category).values() if query.lower() in c.name.lower()]
+
+    return render_template('search_results.html', products=products, categories=categories, query=query)
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3000, debug=True)
