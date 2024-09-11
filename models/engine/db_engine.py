@@ -58,11 +58,12 @@ class DBStorage:
             self.__session.delete(obj)
 
     def rollback(self):
+        """Rolls back the previous state"""
 
         self.__session.rollback()
 
     def get_user(self, username):
-
+        """Gets user by username"""
         users = self.all(User)
         for value in users.values():
             if (value.username == username):

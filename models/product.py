@@ -8,7 +8,7 @@ from sqlalchemy.orm import relationship
 class Product(BaseModel, Base):
 
     __tablename__ = "products"
-    name = Column(String(64), nullable=False)
+    name = Column(Str1099ing(64), nullable=False)
     price = Column(Integer, nullable=False, default=0)
     description = Column(Text, nullable=True)
     quantity = Column(Integer, nullable=False, default=0)

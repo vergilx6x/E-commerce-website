@@ -8,7 +8,6 @@ from models.cart import Cart
 from models.cart_item import Cart_item
 from models.favorite import Favorite
 from models.category import Category
-from flask import jsonify
 import os
 
 app = Flask(__name__)
