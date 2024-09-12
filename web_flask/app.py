@@ -180,7 +180,7 @@ def add_to_cart(product_id):
     else:
         flash('You need to log in to add items to your cart.', 'warning')
     
-    return redirect(url_for('cart'))
+    return redirect(url_for('home'))
 
 @app.route('/category/<string:category_id>')
 def category(category_id):
