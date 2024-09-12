@@ -438,6 +438,8 @@ def edit_profile():
         if request.method == 'POST':
             user.email = request.form.get('email')
             user.username = request.form.get('username')
+            user.first_name = request.form.get('first_name')
+            user.last_name = request.form.get('last_name')
             image = request.files.get('image')
             if image:
                 user.image_url = save_image(image, user.id)
