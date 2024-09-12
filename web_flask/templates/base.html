@@ -42,39 +42,22 @@
     <header class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
         <div class="container">
             <div class="d-flex w-100">
-                <!-- Left side: logo -->
                 <a class="navbar-brand" href="{{ url_for('home') }}">E-Shop</a>
-
-                <!-- Centered search form -->
                 <div style="padding-left: 90px; padding-top: 5px;" class="mx-auto">
                     <form class="d-flex header-search" action="{{ url_for('search') }}" method="get">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query">
                         <button class="btn btn-outline-primary" type="submit">Search</button>
                     </form>
                 </div>
-
-                <!-- Right side: nav items -->
                 <ul class="navbar-nav d-flex flex-row ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('home') }}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('cart') }}"><i class="fas fa-shopping-cart"></i> Cart</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('favorites') }}"><i class="fas fa-heart"></i> Favorites</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('user_profile') }}"><i class="fas fa-user"></i> Profile</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('cart') }}"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('favorites') }}"><i class="fas fa-heart"></i> Favorites</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('user_profile') }}"><i class="fas fa-user"></i> Profile</a></li>
                     {% if 'user_id' in session %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i> Logout</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                     {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -83,6 +66,20 @@
 
     <div class="content">
         <main class="container mt-5 pt-5">
+            <!-- Flash messages block -->
+            {% with messages = get_flashed_messages(with_categories=True) %}
+                {% if messages %}
+                    <div class="alert-container">
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+
             {% block content %}{% endblock %}
         </main>
 
