@@ -380,7 +380,7 @@ def admin_products():
                 product.quantity = quantity
                 product.category_id = category_id
                 if image:
-                    product.image_url = save_image(image)
+                    product.image_url = save_image(image, product.id)
                 storage.save()
                 flash('Product updated successfully.', 'success')
             else:
