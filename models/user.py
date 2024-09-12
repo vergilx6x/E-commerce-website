@@ -2,7 +2,7 @@
 """ holds class User"""
 
 from models.base_model import Base, BaseModel
-from sqlalchemy import Column, String
+from sqlalchemy import Column, String, Boolean
 from sqlalchemy.orm import relationship
 from hashlib import md5
 
@@ -21,6 +21,7 @@ class User(BaseModel, Base):
     address = Column(String(128), nullable=True)
     postal_code = Column(String(60), nullable=True)
     image_url = Column(String(255), nullable=True)
+    is_admin = Column(Boolean, nullable=False, default=False)
     
     favorites = relationship("Favorite", back_populates="user", cascade="all, delete-orphan")
     carts = relationship("Cart", backref="user", cascade="all, delete-orphan")

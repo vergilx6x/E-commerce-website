@@ -8,6 +8,8 @@ from models.cart import Cart
 from models.cart_item import Cart_item
 from models.favorite import Favorite
 from models.category import Category
+from functools import wraps
+from flask import abort
 import os
 
 app = Flask(__name__)
@@ -32,6 +34,16 @@ def close_db(error):
 def product_detail(product_id):
     product = storage.get(Product, product_id)
     return render_template('product_detail.html', product=product)
+
+def admin_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'user_id' in session:
+            user = storage.get(User, session['user_id'])
+            if user and user.is_admin:
+                return f(*args, **kwargs)
+        abort(403)  # Forbidden
+    return decorated_function
 
 @app.route('/home', strict_slashes=False)
 def home():
@@ -243,12 +255,14 @@ def logout():
     return redirect(url_for('home'))
 
 @app.route('/admin', methods=['GET'])
+@admin_required
 def admin_dashboard():
     users = storage.all(User).values()
     products = storage.all(Product).values()
     return render_template('admin_dashboard.html', users=users, products=products)
 
 @app.route('/admin/users', methods=['GET', 'POST'])
+@admin_required
 def admin_users():
     if request.method == 'POST':
         action = request.form.get('action')
@@ -334,6 +348,7 @@ def admin_users():
     return render_template('admin_users.html', users=users)
 
 @app.route('/admin/products', methods=['GET', 'POST'])
+@admin_required
 def admin_products():
     if request.method == 'POST':
         product_id = request.form.get('product_id')
@@ -398,6 +413,7 @@ def admin_products():
 
 
 @app.route('/admin/upload_product_image/<string:product_id>', methods=['GET', 'POST'])
+@admin_required
 def upload_product_image(product_id):
     if request.method == 'POST':
         file = request.files.get('file')
