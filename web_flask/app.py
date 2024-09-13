@@ -8,6 +8,8 @@ from models.cart import Cart
 from models.cart_item import Cart_item
 from models.favorite import Favorite
 from models.category import Category
+from models.order import Order
+from models.order_item import Order_item
 from functools import wraps
 from flask import abort
 import os
@@ -479,6 +481,111 @@ def search():
     categories = [c for c in storage.all(Category).values() if query.lower() in c.name.lower()]
 
     return render_template('search_results.html', products=products, categories=categories, query=query)
+
+@app.route('/user/<string:user_id>/orders')
+def user_orders(user_id):
+    if 'user_id' in session:
+        user = storage.get(User, user_id)
+        if user:
+            orders = [order for order in storage.all(Order).values() if order.user_id == user_id]
+            return render_template('user_orders.html', orders=orders, user=user)
+        else:
+            flash('User not found.', 'error')
+            return redirect(url_for('home'))
+    else:
+        flash('You need to log in to view orders.', 'warning')
+        return redirect(url_for('login'))
+    
+@app.route('/orders', methods=['POST'])
+def add_order():
+    if 'user_id' in session:
+        user = storage.get(User, session['user_id'])
+        if user:
+            data = request.get_json()
+            status = data.get('status', 'pending')
+            total_amount = data.get('total_amount', 0)
+
+            new_order = Order(user_id=user.id, status=status, total_amount=total_amount)
+            storage.new(new_order)
+            storage.save()
+
+            return redirect(url_for('user_orders'))
+        else:
+            flash('User not found. Please log in again.', 'error')
+            return redirect(url_for('login'))
+    else:
+        flash('You need to log in to add an order.', 'warning')
+        return redirect(url_for('login'))
+    
+@app.route('/orders/<string:order_id>', methods=['POST'])
+def delete_order(order_id):
+    if 'user_id' in session:
+        user = storage.get(User, session['user_id'])
+        if user:
+            order = storage.get(Order, order_id)
+            if order and order.user_id == user.id:
+                storage.delete(order)
+                storage.save()
+                flash('Order deleted successfully.', 'success')
+                # Redirect to user orders with user_id
+                return redirect(url_for('user_orders', user_id=user.id))
+            else:
+                flash('Order not found or you are not authorized to delete this order.', 'error')
+                return redirect(url_for('user_orders', user_id=user.id))
+        else:
+            flash('User not found. Please log in again.', 'error')
+            return redirect(url_for('login'))
+    else:
+        flash('You need to log in to delete an order.', 'warning')
+        return redirect(url_for('login'))
+
+    
+@app.route('/checkout', methods=['POST'])
+def checkout():
+    if 'user_id' in session:
+        user = storage.get(User, session['user_id'])
+        if user:
+            # Retrieve the user's cart
+            cart = next((c for c in storage.all(Cart).values() if c.user_id == user.id), None)
+            if cart:
+                cart_items = [item for item in storage.all(Cart_item).values() if item.cart_id == cart.id]
+                
+                if cart_items:
+                    # Calculate total amount
+                    total_amount = sum(item.product.price * item.quantity for item in cart_items)
+                    
+                    # Create a new order
+                    new_order = Order(user_id=user.id, status='pending', total_amount=total_amount)
+                    storage.new(new_order)
+                    
+                    # Add order items
+                    for item in cart_items:
+                        order_item = Order_item(
+                            order_id=new_order.id,
+                            product_id=item.product_id,
+                            price=item.product.price,  # Use price from the Product object
+                            quantity=item.quantity
+                        )
+                        storage.new(order_item)
+                    
+                    # Remove items from cart
+                    storage.delete(cart)
+                    for item in cart_items:
+                        storage.delete(item)
+                    
+                    storage.save()
+                    flash('Order placed successfully.', 'success')
+                    return redirect(url_for('user_orders', user_id=user.id))
+                else:
+                    flash('Your cart is empty.', 'warning')
+            else:
+                flash('No cart found for the user.', 'error')
+        else:
+            flash('User not found. Please log in again.', 'error')
+            return redirect(url_for('login'))
+    else:
+        flash('You need to log in to place an order.', 'warning')
+        return redirect(url_for('login'))
 
 
 if __name__ == '__main__':

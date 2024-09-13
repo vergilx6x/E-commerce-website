@@ -14,6 +14,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ item.product.name }}</h5>
                         <p class="card-text">${{ item.product.price }}</p>
+                        <p class="card-text">Quantity: {{ item.quantity }}</p>
                         <form action="{{ url_for('remove_from_cart', product_id=item.product.id) }}" method="post" class="d-inline">
                             <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> Remove</button>
                         </form>
@@ -21,8 +22,15 @@
                 </div>
             </div>
             {% endfor %}
+            <div class="col-12 mt-5 text-center"> <!-- Increase margin-top here -->
+                <form action="{{ url_for('checkout') }}" method="post">
+                    <button type="submit" style="margin-bottom: 10px;" class="btn btn-primary btn-lg">Place Order</button>
+                </form>
+            </div>
         {% else %}
-            <p class="text-muted">Your cart is empty.</p>
+            <div class="col-12 text-center">
+                <p class="text-muted">Your cart is empty.</p>
+            </div>
         {% endif %}
     </div>
 </div>
