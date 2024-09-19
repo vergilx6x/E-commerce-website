@@ -1,0 +1,779 @@
+nohup: ignoring input
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:3000
+ * Running on http://10.247.71.119:3000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 487-316-012
+34.204.101.74 - - [17/Sep/2024 20:01:31] "HEAD /home HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:32] "GET /home HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:33] "GET /static/css/style.css HTTP/1.1" 304 -
+34.204.101.74 - - [17/Sep/2024 20:01:33] "GET /static/assets/images/image1.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:33] "GET /static/assets/images/image2.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:34] "GET /static/assets/images/image3.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:34] "GET /static/images/automotive.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:34] "GET /static/images/clothing.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:34] "GET /static/images/electronics.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:34] "GET /static/images/sports.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:35] "GET /static/images/home_kitchen.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:35] "GET /static/images/toys.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:35] "GET /static/images/beauty.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:35] "GET /static/uploads/07f2a82a-399a-4236-b879-287f18181c4a.png HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:35] "GET /static/uploads/06b077f4-2534-4638-9c29-77b468cb6417.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:35] "GET /static/uploads/274d2e19-5e49-4c76-a2d6-f32413ad63dc.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:35] "GET /static/images/books.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:36] "GET /static/uploads/0a775b25-9db1-466c-8038-009b641425b8.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:36] "GET /static/uploads/1000c297-e78c-48aa-8b14-21054be3572c.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:36] "GET /static/uploads/16bd444d-102b-4050-a646-c6377d74c402.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:37] "GET /static/uploads/18e764bc-08e4-436d-9de8-b1c8e2ab82fd.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:37] "GET /static/uploads/217a8b3b-554b-463c-bf2e-95b246b1bf8e.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:37] "GET /static/uploads/56005540-72bc-4e58-896d-82107a381844.jpeg HTTP/1.1" 304 -
+34.204.101.74 - - [17/Sep/2024 20:01:37] "GET /static/uploads/5848f29f-17b6-4345-b53f-9826c08c4019.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:37] "GET /static/uploads/666dac28-0f54-40d0-92a7-dcb14463d87a.png HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:37] "GET /static/uploads/5c2ba9c9-f906-448c-af13-9e18b32e3fc5.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:38] "GET /static/uploads/6945de21-f547-4ef6-9ecc-00d008201c41.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:38] "GET /static/uploads/7410f6d7-2f27-48c0-a588-70f2704d9989.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:38] "GET /static/uploads/7e6b9c25-f119-416c-a3a5-863d5d9750af.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:38] "GET /static/uploads/7c4cb478-6c42-43b2-95a3-c5b45efead06.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:38] "GET /static/uploads/765acee4-a295-4f02-9b14-d7e636d07264.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:38] "GET /static/uploads/819acf66-0397-40cb-a6ee-d47b762972be.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:38] "GET /static/uploads/820d3166-99d7-4e3f-9f99-fa35344bc895.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:38] "GET /static/uploads/ad9d93cf-d85e-45fa-b8ef-8a4dade85c61.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:38] "GET /static/uploads/b6ff23bc-170d-49dc-a7ff-75c50376af54.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:38] "GET /static/uploads/b4eda1d1-a2f7-4502-bab2-46abc31b21d4.png HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:38] "GET /static/uploads/ba1dcb23-29d6-4931-a258-b32620d39914.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:38] "GET /static/uploads/b77156a8-fcec-4679-8092-9a1088c4f222.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:38] "GET /static/uploads/bb3c1c85-bfa9-4946-a4e3-f871e98f26d8.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:39] "GET /static/uploads/bf442181-dd42-406d-b807-714f7c05b2fa.jpeg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:39] "GET /static/uploads/c2a44891-30f2-45d0-9340-661d5bc5a305.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:39] "GET /static/uploads/c5752823-ac7a-4783-b22c-89de79fec9de.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:40] "GET /static/uploads/f378732f-242c-46d8-b8a4-f97d8a5b27f2.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:40] "GET /static/uploads/ee017a6a-3a65-434d-b679-b482550544bf.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:40] "GET /static/uploads/c58095ac-a44d-4400-8baf-9a72ad27aad8.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [17/Sep/2024 20:01:43] "GET /favicon.ico HTTP/1.1" 404 -
+34.204.101.74 - - [17/Sep/2024 20:07:44] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [17/Sep/2024 20:07:55] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [17/Sep/2024 20:44:05] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [17/Sep/2024 21:06:56] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [17/Sep/2024 23:15:43] "GET /actuator/health HTTP/1.1" 404 -
+34.204.101.74 - - [17/Sep/2024 23:48:17] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:04:41] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:05:47] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:13:16] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:39:20] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:50:27] "GET /dns-query?dns=csQBAAABAAAAAAAAB2V4YW1wbGUDY29tAAABAAE HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:50:27] "POST /dns-query HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:50:27] "GET /dns-query?name=example.com&type=A HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:50:27] "GET /dns-query?dns=Fj8BAAABAAAAAAAAB2V4YW1wbGUDY29tAAABAAE HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:50:28] "POST /dns-query HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:50:28] "GET /dns-query?name=example.com&type=A HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:50:28] "GET /query?dns=HlcBAAABAAAAAAAAB2V4YW1wbGUDY29tAAABAAE HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:50:28] "POST /query HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:50:28] "GET /query?name=example.com&type=A HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:50:28] "GET /query?dns=dD4BAAABAAAAAAAAB2V4YW1wbGUDY29tAAABAAE HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:50:29] "POST /query HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:50:29] "GET /query?name=example.com&type=A HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:50:29] "GET /resolve?dns=iHYBAAABAAAAAAAAB2V4YW1wbGUDY29tAAABAAE HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:50:29] "POST /resolve HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:50:29] "GET /resolve?name=example.com&type=A HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:50:29] "GET /resolve?dns=N-kBAAABAAAAAAAAB2V4YW1wbGUDY29tAAABAAE HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:50:30] "POST /resolve HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:50:30] "GET /resolve?name=example.com&type=A HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:50:30] "GET /?dns=nGoBAAABAAAAAAAAB2V4YW1wbGUDY29tAAABAAE HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:50:30] "POST / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:50:30] "GET /?name=example.com&type=A HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:50:30] "GET /?dns=IF4BAAABAAAAAAAAB2V4YW1wbGUDY29tAAABAAE HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:50:30] "POST / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 00:50:31] "GET /?name=example.com&type=A HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 01:15:40] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 01:32:28] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 01:34:20] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 02:34:59] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 03:55:38] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 04:41:17] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 05:18:36] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 05:18:36] "GET /favicon.ico HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 06:16:29] "GET /robots.txt HTTP/1.1" 404 -
+162.213.111.174 - - [18/Sep/2024 06:56:48] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 07:00:54] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 07:00:57] "GET /favicon.ico HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 07:47:50] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 08:33:28] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 11:04:15] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 11:08:21] "GET /owa/auth/logon.aspx HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 12:01:33] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 12:02:20] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 12:28:19] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 13:16:34] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 13:42:40] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 13:42:57] "GET /version HTTP/1.1" 404 -
+4.151.38.168 - - [18/Sep/2024 16:09:39] "GET / HTTP/1.1" 404 -
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/MySQLdb/connections.py", line 261, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (2013, 'Lost connection to MySQL server during query')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 1476, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/E-commerce-website/web_flask/app.py", line 53, in home
+    categories = storage.all(Category).values()
+  File "/home/ubuntu/E-commerce-website/models/engine/db_engine.py", line 41, in all
+    objs = self.__session.query(classes[clss]).all()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2362, in execute
+    return self._execute_internal(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2247, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/orm/context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1418, in execute
+    return meth(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/MySQLdb/connections.py", line 261, in query
+    _mysql.connection.query(self, query)
+sqlalchemy.exc.OperationalError: (MySQLdb.OperationalError) (2013, 'Lost connection to MySQL server during query')
+[SQL: SELECT categories.name AS categories_name, categories.description AS categories_description, categories.image_url AS categories_image_url, categories.id AS categories_id, categories.created_at AS categories_created_at, categories.updated_at AS categories_updated_at, categories.deleted_at AS categories_deleted_at 
+FROM categories]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+34.204.101.74 - - [18/Sep/2024 16:16:40] "HEAD /home HTTP/1.1" 500 -
+34.204.101.74 - - [18/Sep/2024 16:16:54] "HEAD / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 16:16:59] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 16:17:00] "GET /favicon.ico HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 16:17:04] "GET /home HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:05] "GET /static/css/style.css HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:05] "GET /static/images/electronics.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:05] "GET /static/images/automotive.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:05] "GET /static/uploads/274d2e19-5e49-4c76-a2d6-f32413ad63dc.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:05] "GET /static/uploads/1000c297-e78c-48aa-8b14-21054be3572c.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:05] "GET /static/uploads/07f2a82a-399a-4236-b879-287f18181c4a.png HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:05] "GET /static/images/clothing.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:05] "GET /static/uploads/06b077f4-2534-4638-9c29-77b468cb6417.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:05] "GET /static/assets/images/image2.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:05] "GET /static/uploads/0a775b25-9db1-466c-8038-009b641425b8.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:05] "GET /static/assets/images/image3.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:05] "GET /static/images/sports.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:05] "GET /static/assets/images/image1.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:06] "GET /static/images/home_kitchen.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:06] "GET /static/images/beauty.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:06] "GET /static/images/toys.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:06] "GET /static/images/books.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:06] "GET /static/uploads/18e764bc-08e4-436d-9de8-b1c8e2ab82fd.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:06] "GET /static/uploads/16bd444d-102b-4050-a646-c6377d74c402.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:06] "GET /static/uploads/217a8b3b-554b-463c-bf2e-95b246b1bf8e.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:06] "GET /static/uploads/56005540-72bc-4e58-896d-82107a381844.jpeg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:06] "GET /static/uploads/5848f29f-17b6-4345-b53f-9826c08c4019.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:06] "GET /static/uploads/666dac28-0f54-40d0-92a7-dcb14463d87a.png HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:06] "GET /static/uploads/5c2ba9c9-f906-448c-af13-9e18b32e3fc5.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:07] "GET /static/uploads/6945de21-f547-4ef6-9ecc-00d008201c41.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:07] "GET /static/uploads/7410f6d7-2f27-48c0-a588-70f2704d9989.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:07] "GET /static/uploads/765acee4-a295-4f02-9b14-d7e636d07264.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:07] "GET /static/uploads/7c4cb478-6c42-43b2-95a3-c5b45efead06.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:07] "GET /static/uploads/7e6b9c25-f119-416c-a3a5-863d5d9750af.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:08] "GET /static/uploads/819acf66-0397-40cb-a6ee-d47b762972be.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:08] "GET /static/uploads/820d3166-99d7-4e3f-9f99-fa35344bc895.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:08] "GET /static/uploads/ad9d93cf-d85e-45fa-b8ef-8a4dade85c61.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:08] "GET /static/uploads/b4eda1d1-a2f7-4502-bab2-46abc31b21d4.png HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:08] "GET /static/uploads/b6ff23bc-170d-49dc-a7ff-75c50376af54.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:08] "GET /static/uploads/b77156a8-fcec-4679-8092-9a1088c4f222.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:08] "GET /static/uploads/ba1dcb23-29d6-4931-a258-b32620d39914.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:08] "GET /static/uploads/bb3c1c85-bfa9-4946-a4e3-f871e98f26d8.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:08] "GET /static/uploads/c2a44891-30f2-45d0-9340-661d5bc5a305.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:08] "GET /static/uploads/bf442181-dd42-406d-b807-714f7c05b2fa.jpeg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:08] "GET /static/uploads/c58095ac-a44d-4400-8baf-9a72ad27aad8.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:08] "GET /static/uploads/c5752823-ac7a-4783-b22c-89de79fec9de.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:08] "GET /static/uploads/ee017a6a-3a65-434d-b679-b482550544bf.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:08] "GET /static/uploads/f378732f-242c-46d8-b8a4-f97d8a5b27f2.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:17:47] "GET /~@/fonts/opensans-regular.woff HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 16:33:27] "GET /home HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:33:28] "GET /static/css/style.css HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:28] "GET /static/assets/images/image1.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:33:28] "GET /static/assets/images/image2.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:33:28] "GET /static/assets/images/image3.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:33:28] "GET /static/images/home_kitchen.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:33:28] "GET /static/images/automotive.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:33:28] "GET /static/images/clothing.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:28] "GET /static/images/electronics.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:28] "GET /static/images/sports.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:28] "GET /static/images/beauty.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:28] "GET /static/images/toys.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/images/books.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/uploads/274d2e19-5e49-4c76-a2d6-f32413ad63dc.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/uploads/06b077f4-2534-4638-9c29-77b468cb6417.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/uploads/07f2a82a-399a-4236-b879-287f18181c4a.png HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/uploads/0a775b25-9db1-466c-8038-009b641425b8.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/uploads/1000c297-e78c-48aa-8b14-21054be3572c.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/uploads/16bd444d-102b-4050-a646-c6377d74c402.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/uploads/18e764bc-08e4-436d-9de8-b1c8e2ab82fd.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/uploads/217a8b3b-554b-463c-bf2e-95b246b1bf8e.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/uploads/56005540-72bc-4e58-896d-82107a381844.jpeg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/uploads/5848f29f-17b6-4345-b53f-9826c08c4019.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/uploads/5c2ba9c9-f906-448c-af13-9e18b32e3fc5.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/uploads/666dac28-0f54-40d0-92a7-dcb14463d87a.png HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/uploads/6945de21-f547-4ef6-9ecc-00d008201c41.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/uploads/7410f6d7-2f27-48c0-a588-70f2704d9989.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/uploads/765acee4-a295-4f02-9b14-d7e636d07264.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/uploads/7c4cb478-6c42-43b2-95a3-c5b45efead06.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/uploads/7e6b9c25-f119-416c-a3a5-863d5d9750af.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/uploads/819acf66-0397-40cb-a6ee-d47b762972be.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/uploads/ad9d93cf-d85e-45fa-b8ef-8a4dade85c61.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/uploads/820d3166-99d7-4e3f-9f99-fa35344bc895.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/uploads/b4eda1d1-a2f7-4502-bab2-46abc31b21d4.png HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/uploads/b6ff23bc-170d-49dc-a7ff-75c50376af54.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/uploads/b77156a8-fcec-4679-8092-9a1088c4f222.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/uploads/ba1dcb23-29d6-4931-a258-b32620d39914.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/uploads/bb3c1c85-bfa9-4946-a4e3-f871e98f26d8.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:29] "GET /static/uploads/bf442181-dd42-406d-b807-714f7c05b2fa.jpeg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:30] "GET /static/uploads/c2a44891-30f2-45d0-9340-661d5bc5a305.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:30] "GET /static/uploads/c5752823-ac7a-4783-b22c-89de79fec9de.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:30] "GET /static/uploads/c58095ac-a44d-4400-8baf-9a72ad27aad8.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 16:33:30] "GET /static/uploads/ee017a6a-3a65-434d-b679-b482550544bf.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 16:33:30] "GET /static/uploads/f378732f-242c-46d8-b8a4-f97d8a5b27f2.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [18/Sep/2024 18:28:24] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 18:51:03] "GET /.env HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 18:52:21] "HEAD /home HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:22] "GET /home HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:22] "GET /static/css/style.css HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:22] "GET /static/assets/images/image2.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:22] "GET /static/assets/images/image1.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:22] "GET /static/assets/images/image3.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:22] "GET /static/images/electronics.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:22] "GET /static/images/sports.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:22] "GET /static/images/home_kitchen.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:23] "GET /static/uploads/274d2e19-5e49-4c76-a2d6-f32413ad63dc.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:23] "GET /static/images/automotive.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:23] "GET /static/images/clothing.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:23] "GET /static/images/beauty.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:24] "GET /static/images/toys.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:24] "GET /static/images/books.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:24] "GET /static/uploads/06b077f4-2534-4638-9c29-77b468cb6417.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:24] "GET /static/uploads/07f2a82a-399a-4236-b879-287f18181c4a.png HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:25] "GET /static/uploads/0a775b25-9db1-466c-8038-009b641425b8.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:25] "GET /static/uploads/1000c297-e78c-48aa-8b14-21054be3572c.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:25] "GET /static/uploads/16bd444d-102b-4050-a646-c6377d74c402.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:25] "GET /static/uploads/18e764bc-08e4-436d-9de8-b1c8e2ab82fd.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:25] "GET /static/uploads/217a8b3b-554b-463c-bf2e-95b246b1bf8e.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:25] "GET /static/uploads/56005540-72bc-4e58-896d-82107a381844.jpeg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:25] "GET /static/uploads/5848f29f-17b6-4345-b53f-9826c08c4019.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:25] "GET /static/uploads/5c2ba9c9-f906-448c-af13-9e18b32e3fc5.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:25] "GET /static/uploads/666dac28-0f54-40d0-92a7-dcb14463d87a.png HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:25] "GET /static/uploads/6945de21-f547-4ef6-9ecc-00d008201c41.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:25] "GET /static/uploads/7410f6d7-2f27-48c0-a588-70f2704d9989.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:26] "GET /static/uploads/765acee4-a295-4f02-9b14-d7e636d07264.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:26] "GET /static/uploads/7c4cb478-6c42-43b2-95a3-c5b45efead06.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:26] "GET /static/uploads/7e6b9c25-f119-416c-a3a5-863d5d9750af.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:26] "GET /static/uploads/819acf66-0397-40cb-a6ee-d47b762972be.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:26] "GET /static/uploads/820d3166-99d7-4e3f-9f99-fa35344bc895.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:26] "GET /static/uploads/b4eda1d1-a2f7-4502-bab2-46abc31b21d4.png HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:26] "GET /static/uploads/ad9d93cf-d85e-45fa-b8ef-8a4dade85c61.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:27] "GET /static/uploads/b6ff23bc-170d-49dc-a7ff-75c50376af54.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:27] "GET /static/uploads/b77156a8-fcec-4679-8092-9a1088c4f222.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:27] "GET /static/uploads/ba1dcb23-29d6-4931-a258-b32620d39914.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:27] "GET /static/uploads/bb3c1c85-bfa9-4946-a4e3-f871e98f26d8.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:27] "GET /static/uploads/bf442181-dd42-406d-b807-714f7c05b2fa.jpeg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:28] "GET /static/uploads/c2a44891-30f2-45d0-9340-661d5bc5a305.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:28] "GET /static/uploads/c5752823-ac7a-4783-b22c-89de79fec9de.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:28] "GET /static/uploads/c58095ac-a44d-4400-8baf-9a72ad27aad8.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:28] "GET /static/uploads/ee017a6a-3a65-434d-b679-b482550544bf.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:28] "GET /static/uploads/f378732f-242c-46d8-b8a4-f97d8a5b27f2.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [18/Sep/2024 18:52:41] "GET /favicon.ico HTTP/1.1" 404 -
+44.220.188.133 - - [18/Sep/2024 19:12:34] code 400, message Bad HTTP/0.9 request type ('\x00')
+44.220.188.133 - - [18/Sep/2024 19:12:34] "\x00\x1e\x8c\x8c\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00\x07version\x04bind\x00\x00\x10\x00\x03" HTTPStatus.BAD_REQUEST -
+44.220.188.133 - - [18/Sep/2024 19:12:37] code 400, message Bad request syntax ('\x00*ú&\x01\x00\x00\x01\x00\x00\x00\x00\x00\x01\x03www\x05yahoo\x03com\x00\x00\x01\x00\x01\x00\x00)ÿÿ\x00\x00\x00\x00\x00\x00')
+44.220.188.133 - - [18/Sep/2024 19:12:37] "\x00*ú&\x01\x00\x00\x01\x00\x00\x00\x00\x00\x01\x03www\x05yahoo\x03com\x00\x00\x01\x00\x01\x00\x00)ÿÿ\x00\x00\x00\x00\x00\x00" HTTPStatus.BAD_REQUEST -
+34.204.101.74 - - [18/Sep/2024 19:39:31] "GET /robots.txt HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 19:40:45] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 20:10:32] "GET /dns-query?dns=YiQBAAABAAAAAAAAB2V4YW1wbGUDY29tAAABAAE HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 20:10:32] "POST /dns-query HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 20:10:32] "GET /dns-query?name=example.com&type=A HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 20:10:33] "GET /dns-query?dns=7gUBAAABAAAAAAAAB2V4YW1wbGUDY29tAAABAAE HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 20:10:33] "POST /dns-query HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 20:10:33] "GET /dns-query?name=example.com&type=A HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 20:10:33] "GET /query?dns=FpEBAAABAAAAAAAAB2V4YW1wbGUDY29tAAABAAE HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 20:10:33] "POST /query HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 20:10:34] "GET /query?name=example.com&type=A HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 20:10:34] "GET /query?dns=KAUBAAABAAAAAAAAB2V4YW1wbGUDY29tAAABAAE HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 20:10:34] "POST /query HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 20:10:34] "GET /query?name=example.com&type=A HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 20:10:35] "GET /resolve?dns=y4oBAAABAAAAAAAAB2V4YW1wbGUDY29tAAABAAE HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 20:10:35] "POST /resolve HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 20:10:35] "GET /resolve?name=example.com&type=A HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 20:10:36] "GET /resolve?dns=uYkBAAABAAAAAAAAB2V4YW1wbGUDY29tAAABAAE HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 20:10:36] "POST /resolve HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 20:10:36] "GET /resolve?name=example.com&type=A HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 20:10:36] "GET /?dns=NwUBAAABAAAAAAAAB2V4YW1wbGUDY29tAAABAAE HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 20:10:37] "POST / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 20:10:37] "GET /?name=example.com&type=A HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 20:10:38] "GET /?dns=7wUBAAABAAAAAAAAB2V4YW1wbGUDY29tAAABAAE HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 20:10:38] "POST / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 20:10:39] "GET /?name=example.com&type=A HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 21:01:58] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [18/Sep/2024 22:11:12] "GET /autodiscover/autodiscover.json?@zdi/Powershell HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 00:21:10] "GET /.env HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 01:26:14] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 01:35:50] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 02:32:37] "GET / HTTP/1.1" 404 -
+205.210.31.167 - - [19/Sep/2024 03:05:19] "GET / HTTP/1.0" 404 -
+34.204.101.74 - - [19/Sep/2024 03:14:11] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 04:30:26] "GET / HTTP/1.1" 404 -
+45.156.128.45 - - [19/Sep/2024 06:00:32] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 06:17:09] "GET /.git/config HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 07:28:17] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 08:12:08] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 08:12:18] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 10:26:53] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 10:27:12] "GET /robots.txt HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 10:27:13] "GET /sitemap.xml HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 10:27:14] "GET /.well-known/security.txt HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 10:27:17] "GET /favicon.ico HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 10:33:39] "GET /.git/config HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 11:21:56] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 12:12:06] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 12:19:42] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 12:22:15] "GET /favicon.ico HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 12:23:49] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 12:28:03] "GET /geoserver/web/ HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 12:47:30] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 13:42:41] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 14:43:28] "GET /home HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/MySQLdb/connections.py", line 261, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (2013, 'Lost connection to MySQL server during query')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 1476, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/E-commerce-website/web_flask/app.py", line 53, in home
+    categories = storage.all(Category).values()
+  File "/home/ubuntu/E-commerce-website/models/engine/db_engine.py", line 41, in all
+    objs = self.__session.query(classes[clss]).all()
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2362, in execute
+    return self._execute_internal(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2247, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/orm/context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1418, in execute
+    return meth(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/MySQLdb/connections.py", line 261, in query
+    _mysql.connection.query(self, query)
+sqlalchemy.exc.OperationalError: (MySQLdb.OperationalError) (2013, 'Lost connection to MySQL server during query')
+[SQL: SELECT categories.name AS categories_name, categories.description AS categories_description, categories.image_url AS categories_image_url, categories.id AS categories_id, categories.created_at AS categories_created_at, categories.updated_at AS categories_updated_at, categories.deleted_at AS categories_deleted_at 
+FROM categories]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+34.204.101.74 - - [19/Sep/2024 14:43:28] "GET /home?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:43:28] "GET /home?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:43:29] "GET /home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:53] "GET /home HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:44:53] "GET /static/css/style.css HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:53] "GET /static/assets/images/image2.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:53] "GET /static/assets/images/image1.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:44:53] "GET /static/uploads/06b077f4-2534-4638-9c29-77b468cb6417.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:53] "GET /static/images/clothing.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:53] "GET /static/uploads/07f2a82a-399a-4236-b879-287f18181c4a.png HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:53] "GET /static/uploads/0a775b25-9db1-466c-8038-009b641425b8.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:53] "GET /static/uploads/1000c297-e78c-48aa-8b14-21054be3572c.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:53] "GET /static/uploads/274d2e19-5e49-4c76-a2d6-f32413ad63dc.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:53] "GET /static/images/automotive.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:53] "GET /static/assets/images/image3.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:53] "GET /static/images/electronics.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:53] "GET /static/images/sports.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:53] "GET /static/images/home_kitchen.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:53] "GET /static/images/beauty.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:53] "GET /static/images/toys.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:53] "GET /static/images/books.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:53] "GET /static/uploads/16bd444d-102b-4050-a646-c6377d74c402.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:53] "GET /static/uploads/18e764bc-08e4-436d-9de8-b1c8e2ab82fd.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:53] "GET /static/uploads/217a8b3b-554b-463c-bf2e-95b246b1bf8e.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:53] "GET /static/uploads/56005540-72bc-4e58-896d-82107a381844.jpeg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:53] "GET /static/uploads/5848f29f-17b6-4345-b53f-9826c08c4019.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:53] "GET /static/uploads/5c2ba9c9-f906-448c-af13-9e18b32e3fc5.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:54] "GET /static/uploads/666dac28-0f54-40d0-92a7-dcb14463d87a.png HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:44:54] "GET /static/uploads/6945de21-f547-4ef6-9ecc-00d008201c41.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:54] "GET /static/uploads/7410f6d7-2f27-48c0-a588-70f2704d9989.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:54] "GET /static/uploads/765acee4-a295-4f02-9b14-d7e636d07264.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:54] "GET /static/uploads/7c4cb478-6c42-43b2-95a3-c5b45efead06.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:54] "GET /static/uploads/7e6b9c25-f119-416c-a3a5-863d5d9750af.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:54] "GET /static/uploads/819acf66-0397-40cb-a6ee-d47b762972be.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:54] "GET /static/uploads/820d3166-99d7-4e3f-9f99-fa35344bc895.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:54] "GET /static/uploads/ad9d93cf-d85e-45fa-b8ef-8a4dade85c61.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:54] "GET /static/uploads/b4eda1d1-a2f7-4502-bab2-46abc31b21d4.png HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:54] "GET /static/uploads/b6ff23bc-170d-49dc-a7ff-75c50376af54.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:54] "GET /static/uploads/b77156a8-fcec-4679-8092-9a1088c4f222.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:54] "GET /static/uploads/ba1dcb23-29d6-4931-a258-b32620d39914.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:54] "GET /static/uploads/bf442181-dd42-406d-b807-714f7c05b2fa.jpeg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:54] "GET /static/uploads/bb3c1c85-bfa9-4946-a4e3-f871e98f26d8.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:54] "GET /static/uploads/c2a44891-30f2-45d0-9340-661d5bc5a305.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:54] "GET /static/uploads/c5752823-ac7a-4783-b22c-89de79fec9de.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:54] "GET /static/uploads/c58095ac-a44d-4400-8baf-9a72ad27aad8.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:54] "GET /static/uploads/f378732f-242c-46d8-b8a4-f97d8a5b27f2.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:44:54] "GET /static/uploads/ee017a6a-3a65-434d-b679-b482550544bf.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:00] "GET /user/c5bffc84-39fd-4cc1-944e-c66efa4eba86/orders HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:00] "GET /static/css/style.css HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:01] "GET /user_profile HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:01] "GET /static/css/style.css HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:01] "GET /static/uploads/c5bffc84-39fd-4cc1-944e-c66efa4eba86.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:02] "GET /favorites HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:02] "GET /static/uploads/f378732f-242c-46d8-b8a4-f97d8a5b27f2.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:02] "GET /static/css/style.css HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:02] "GET /static/uploads/274d2e19-5e49-4c76-a2d6-f32413ad63dc.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:03] "GET /cart HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:03] "GET /static/css/style.css HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:04] "GET /home HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:04] "GET /static/css/style.css HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:04] "GET /static/assets/images/image2.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:04] "GET /static/assets/images/image1.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/assets/images/image3.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/images/electronics.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/images/sports.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/images/home_kitchen.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/images/automotive.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/06b077f4-2534-4638-9c29-77b468cb6417.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/07f2a82a-399a-4236-b879-287f18181c4a.png HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/images/clothing.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/274d2e19-5e49-4c76-a2d6-f32413ad63dc.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/0a775b25-9db1-466c-8038-009b641425b8.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/1000c297-e78c-48aa-8b14-21054be3572c.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/images/beauty.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/images/toys.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/images/books.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/18e764bc-08e4-436d-9de8-b1c8e2ab82fd.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/16bd444d-102b-4050-a646-c6377d74c402.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/217a8b3b-554b-463c-bf2e-95b246b1bf8e.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/56005540-72bc-4e58-896d-82107a381844.jpeg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/5848f29f-17b6-4345-b53f-9826c08c4019.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/666dac28-0f54-40d0-92a7-dcb14463d87a.png HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/5c2ba9c9-f906-448c-af13-9e18b32e3fc5.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/6945de21-f547-4ef6-9ecc-00d008201c41.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/7410f6d7-2f27-48c0-a588-70f2704d9989.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/765acee4-a295-4f02-9b14-d7e636d07264.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/7c4cb478-6c42-43b2-95a3-c5b45efead06.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/7e6b9c25-f119-416c-a3a5-863d5d9750af.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/ad9d93cf-d85e-45fa-b8ef-8a4dade85c61.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/819acf66-0397-40cb-a6ee-d47b762972be.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/820d3166-99d7-4e3f-9f99-fa35344bc895.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/b4eda1d1-a2f7-4502-bab2-46abc31b21d4.png HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/b6ff23bc-170d-49dc-a7ff-75c50376af54.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/b77156a8-fcec-4679-8092-9a1088c4f222.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/bb3c1c85-bfa9-4946-a4e3-f871e98f26d8.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/ba1dcb23-29d6-4931-a258-b32620d39914.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/bf442181-dd42-406d-b807-714f7c05b2fa.jpeg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/c2a44891-30f2-45d0-9340-661d5bc5a305.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/c5752823-ac7a-4783-b22c-89de79fec9de.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/c58095ac-a44d-4400-8baf-9a72ad27aad8.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/ee017a6a-3a65-434d-b679-b482550544bf.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:05] "GET /static/uploads/f378732f-242c-46d8-b8a4-f97d8a5b27f2.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:15] "GET /home HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:15] "GET /static/css/style.css HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:15] "GET /static/assets/images/image1.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:16] "GET /static/uploads/07f2a82a-399a-4236-b879-287f18181c4a.png HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:16] "GET /static/uploads/06b077f4-2534-4638-9c29-77b468cb6417.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:16] "GET /static/uploads/274d2e19-5e49-4c76-a2d6-f32413ad63dc.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:16] "GET /static/uploads/1000c297-e78c-48aa-8b14-21054be3572c.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:16] "GET /static/images/clothing.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:16] "GET /static/uploads/0a775b25-9db1-466c-8038-009b641425b8.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:16] "GET /static/images/automotive.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:16] "GET /static/assets/images/image2.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:16] "GET /static/assets/images/image3.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:16] "GET /static/images/electronics.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:16] "GET /static/images/sports.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:16] "GET /static/images/home_kitchen.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:16] "GET /static/images/beauty.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:16] "GET /static/images/books.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:16] "GET /static/images/toys.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:16] "GET /static/uploads/16bd444d-102b-4050-a646-c6377d74c402.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:16] "GET /static/uploads/18e764bc-08e4-436d-9de8-b1c8e2ab82fd.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:16] "GET /static/uploads/217a8b3b-554b-463c-bf2e-95b246b1bf8e.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:16] "GET /static/uploads/56005540-72bc-4e58-896d-82107a381844.jpeg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:16] "GET /static/uploads/5848f29f-17b6-4345-b53f-9826c08c4019.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:16] "GET /static/uploads/5c2ba9c9-f906-448c-af13-9e18b32e3fc5.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:17] "GET /static/uploads/666dac28-0f54-40d0-92a7-dcb14463d87a.png HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:17] "GET /static/uploads/6945de21-f547-4ef6-9ecc-00d008201c41.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:17] "GET /static/uploads/7410f6d7-2f27-48c0-a588-70f2704d9989.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:17] "GET /static/uploads/765acee4-a295-4f02-9b14-d7e636d07264.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:17] "GET /static/uploads/7c4cb478-6c42-43b2-95a3-c5b45efead06.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:17] "GET /static/uploads/819acf66-0397-40cb-a6ee-d47b762972be.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:17] "GET /static/uploads/7e6b9c25-f119-416c-a3a5-863d5d9750af.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:17] "GET /static/uploads/820d3166-99d7-4e3f-9f99-fa35344bc895.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:17] "GET /static/uploads/b4eda1d1-a2f7-4502-bab2-46abc31b21d4.png HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:17] "GET /static/uploads/ad9d93cf-d85e-45fa-b8ef-8a4dade85c61.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:17] "GET /static/uploads/b6ff23bc-170d-49dc-a7ff-75c50376af54.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:17] "GET /static/uploads/bf442181-dd42-406d-b807-714f7c05b2fa.jpeg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:17] "GET /static/uploads/b77156a8-fcec-4679-8092-9a1088c4f222.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:17] "GET /static/uploads/ba1dcb23-29d6-4931-a258-b32620d39914.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:17] "GET /static/uploads/bb3c1c85-bfa9-4946-a4e3-f871e98f26d8.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:17] "GET /static/uploads/c2a44891-30f2-45d0-9340-661d5bc5a305.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:17] "GET /static/uploads/c5752823-ac7a-4783-b22c-89de79fec9de.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:17] "GET /static/uploads/ee017a6a-3a65-434d-b679-b482550544bf.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:17] "GET /static/uploads/c58095ac-a44d-4400-8baf-9a72ad27aad8.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:17] "GET /static/uploads/f378732f-242c-46d8-b8a4-f97d8a5b27f2.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:22] "GET /home HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:22] "GET /static/assets/images/image1.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:22] "GET /static/css/style.css HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:22] "GET /static/assets/images/image2.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:22] "GET /static/assets/images/image3.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:22] "GET /static/images/electronics.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:22] "GET /static/images/sports.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:22] "GET /static/images/automotive.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:22] "GET /static/images/home_kitchen.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:22] "GET /static/images/clothing.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/images/beauty.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/274d2e19-5e49-4c76-a2d6-f32413ad63dc.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/images/toys.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/images/books.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/07f2a82a-399a-4236-b879-287f18181c4a.png HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/06b077f4-2534-4638-9c29-77b468cb6417.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/0a775b25-9db1-466c-8038-009b641425b8.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/1000c297-e78c-48aa-8b14-21054be3572c.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/18e764bc-08e4-436d-9de8-b1c8e2ab82fd.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/16bd444d-102b-4050-a646-c6377d74c402.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/217a8b3b-554b-463c-bf2e-95b246b1bf8e.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/56005540-72bc-4e58-896d-82107a381844.jpeg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/5848f29f-17b6-4345-b53f-9826c08c4019.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/666dac28-0f54-40d0-92a7-dcb14463d87a.png HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/5c2ba9c9-f906-448c-af13-9e18b32e3fc5.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/6945de21-f547-4ef6-9ecc-00d008201c41.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/765acee4-a295-4f02-9b14-d7e636d07264.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/7410f6d7-2f27-48c0-a588-70f2704d9989.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/7c4cb478-6c42-43b2-95a3-c5b45efead06.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/820d3166-99d7-4e3f-9f99-fa35344bc895.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/ad9d93cf-d85e-45fa-b8ef-8a4dade85c61.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/7e6b9c25-f119-416c-a3a5-863d5d9750af.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/819acf66-0397-40cb-a6ee-d47b762972be.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/b4eda1d1-a2f7-4502-bab2-46abc31b21d4.png HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/b6ff23bc-170d-49dc-a7ff-75c50376af54.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/c2a44891-30f2-45d0-9340-661d5bc5a305.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/b77156a8-fcec-4679-8092-9a1088c4f222.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/ba1dcb23-29d6-4931-a258-b32620d39914.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/bf442181-dd42-406d-b807-714f7c05b2fa.jpeg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/bb3c1c85-bfa9-4946-a4e3-f871e98f26d8.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:23] "GET /static/uploads/c5752823-ac7a-4783-b22c-89de79fec9de.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:24] "GET /static/uploads/f378732f-242c-46d8-b8a4-f97d8a5b27f2.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:24] "GET /static/uploads/c58095ac-a44d-4400-8baf-9a72ad27aad8.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:24] "GET /static/uploads/ee017a6a-3a65-434d-b679-b482550544bf.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:45:39] "GET /home HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:40] "GET /static/css/style.css HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:40] "GET /static/assets/images/image1.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:40] "GET /static/assets/images/image2.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:40] "GET /static/assets/images/image3.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:40] "GET /static/images/electronics.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:40] "GET /static/images/home_kitchen.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:40] "GET /static/images/sports.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:40] "GET /static/images/automotive.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:40] "GET /static/images/clothing.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:41] "GET /static/images/beauty.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:41] "GET /static/images/toys.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:41] "GET /static/images/books.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:41] "GET /static/uploads/274d2e19-5e49-4c76-a2d6-f32413ad63dc.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:41] "GET /static/uploads/06b077f4-2534-4638-9c29-77b468cb6417.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:41] "GET /static/uploads/07f2a82a-399a-4236-b879-287f18181c4a.png HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:41] "GET /static/uploads/0a775b25-9db1-466c-8038-009b641425b8.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:41] "GET /static/uploads/1000c297-e78c-48aa-8b14-21054be3572c.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:41] "GET /static/uploads/16bd444d-102b-4050-a646-c6377d74c402.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:41] "GET /static/uploads/18e764bc-08e4-436d-9de8-b1c8e2ab82fd.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:41] "GET /static/uploads/217a8b3b-554b-463c-bf2e-95b246b1bf8e.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:41] "GET /static/uploads/56005540-72bc-4e58-896d-82107a381844.jpeg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:42] "GET /static/uploads/5848f29f-17b6-4345-b53f-9826c08c4019.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:42] "GET /static/uploads/5c2ba9c9-f906-448c-af13-9e18b32e3fc5.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:42] "GET /static/uploads/666dac28-0f54-40d0-92a7-dcb14463d87a.png HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:42] "GET /static/uploads/6945de21-f547-4ef6-9ecc-00d008201c41.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:42] "GET /static/uploads/7410f6d7-2f27-48c0-a588-70f2704d9989.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:42] "GET /static/uploads/765acee4-a295-4f02-9b14-d7e636d07264.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:42] "GET /static/uploads/7c4cb478-6c42-43b2-95a3-c5b45efead06.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:42] "GET /static/uploads/7e6b9c25-f119-416c-a3a5-863d5d9750af.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:42] "GET /static/uploads/819acf66-0397-40cb-a6ee-d47b762972be.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:42] "GET /static/uploads/820d3166-99d7-4e3f-9f99-fa35344bc895.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:42] "GET /static/uploads/ad9d93cf-d85e-45fa-b8ef-8a4dade85c61.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:42] "GET /static/uploads/b4eda1d1-a2f7-4502-bab2-46abc31b21d4.png HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:42] "GET /static/uploads/b6ff23bc-170d-49dc-a7ff-75c50376af54.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:42] "GET /static/uploads/b77156a8-fcec-4679-8092-9a1088c4f222.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:42] "GET /static/uploads/bb3c1c85-bfa9-4946-a4e3-f871e98f26d8.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:42] "GET /static/uploads/ba1dcb23-29d6-4931-a258-b32620d39914.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:42] "GET /static/uploads/bf442181-dd42-406d-b807-714f7c05b2fa.jpeg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:43] "GET /static/uploads/c2a44891-30f2-45d0-9340-661d5bc5a305.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:43] "GET /static/uploads/c5752823-ac7a-4783-b22c-89de79fec9de.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:43] "GET /static/uploads/c58095ac-a44d-4400-8baf-9a72ad27aad8.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:43] "GET /static/uploads/ee017a6a-3a65-434d-b679-b482550544bf.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:45:43] "GET /static/uploads/f378732f-242c-46d8-b8a4-f97d8a5b27f2.jpg HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:46:40] "GET /home HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:46:40] "GET /static/css/style.css HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:41] "GET /static/assets/images/image1.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:41] "GET /static/assets/images/image2.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:41] "GET /static/assets/images/image3.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:41] "GET /static/images/electronics.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:41] "GET /static/images/sports.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:41] "GET /static/images/home_kitchen.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:41] "GET /static/images/automotive.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:41] "GET /static/uploads/274d2e19-5e49-4c76-a2d6-f32413ad63dc.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:41] "GET /static/images/clothing.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:41] "GET /static/uploads/06b077f4-2534-4638-9c29-77b468cb6417.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:41] "GET /static/uploads/07f2a82a-399a-4236-b879-287f18181c4a.png HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:41] "GET /static/uploads/0a775b25-9db1-466c-8038-009b641425b8.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:41] "GET /static/uploads/1000c297-e78c-48aa-8b14-21054be3572c.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:41] "GET /static/images/beauty.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:41] "GET /static/images/toys.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/images/books.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/uploads/217a8b3b-554b-463c-bf2e-95b246b1bf8e.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/uploads/16bd444d-102b-4050-a646-c6377d74c402.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/uploads/18e764bc-08e4-436d-9de8-b1c8e2ab82fd.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/uploads/56005540-72bc-4e58-896d-82107a381844.jpeg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/uploads/5848f29f-17b6-4345-b53f-9826c08c4019.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/uploads/5c2ba9c9-f906-448c-af13-9e18b32e3fc5.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/uploads/666dac28-0f54-40d0-92a7-dcb14463d87a.png HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/uploads/7410f6d7-2f27-48c0-a588-70f2704d9989.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/uploads/6945de21-f547-4ef6-9ecc-00d008201c41.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/uploads/765acee4-a295-4f02-9b14-d7e636d07264.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/uploads/7c4cb478-6c42-43b2-95a3-c5b45efead06.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/uploads/7e6b9c25-f119-416c-a3a5-863d5d9750af.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/uploads/819acf66-0397-40cb-a6ee-d47b762972be.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/uploads/ad9d93cf-d85e-45fa-b8ef-8a4dade85c61.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/uploads/820d3166-99d7-4e3f-9f99-fa35344bc895.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/uploads/b4eda1d1-a2f7-4502-bab2-46abc31b21d4.png HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/uploads/b6ff23bc-170d-49dc-a7ff-75c50376af54.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/uploads/b77156a8-fcec-4679-8092-9a1088c4f222.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/uploads/ba1dcb23-29d6-4931-a258-b32620d39914.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/uploads/bf442181-dd42-406d-b807-714f7c05b2fa.jpeg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/uploads/bb3c1c85-bfa9-4946-a4e3-f871e98f26d8.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/uploads/c2a44891-30f2-45d0-9340-661d5bc5a305.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/uploads/c58095ac-a44d-4400-8baf-9a72ad27aad8.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/uploads/c5752823-ac7a-4783-b22c-89de79fec9de.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/uploads/ee017a6a-3a65-434d-b679-b482550544bf.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:46:42] "GET /static/uploads/f378732f-242c-46d8-b8a4-f97d8a5b27f2.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:02] "GET /home HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:47:15] "GET /home HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 14:47:15] "GET /static/assets/images/image1.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:15] "GET /static/css/style.css HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:15] "GET /static/assets/images/image2.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:15] "GET /static/assets/images/image3.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:15] "GET /static/images/electronics.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:15] "GET /static/images/sports.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:15] "GET /static/images/automotive.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:15] "GET /static/images/home_kitchen.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:15] "GET /static/images/clothing.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:15] "GET /static/images/beauty.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:15] "GET /static/images/books.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:15] "GET /static/images/toys.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:15] "GET /static/uploads/06b077f4-2534-4638-9c29-77b468cb6417.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:15] "GET /static/uploads/274d2e19-5e49-4c76-a2d6-f32413ad63dc.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:15] "GET /static/uploads/07f2a82a-399a-4236-b879-287f18181c4a.png HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:15] "GET /static/uploads/0a775b25-9db1-466c-8038-009b641425b8.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:15] "GET /static/uploads/1000c297-e78c-48aa-8b14-21054be3572c.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:15] "GET /static/uploads/16bd444d-102b-4050-a646-c6377d74c402.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:15] "GET /static/uploads/56005540-72bc-4e58-896d-82107a381844.jpeg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:15] "GET /static/uploads/18e764bc-08e4-436d-9de8-b1c8e2ab82fd.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:15] "GET /static/uploads/217a8b3b-554b-463c-bf2e-95b246b1bf8e.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:16] "GET /static/uploads/5848f29f-17b6-4345-b53f-9826c08c4019.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:16] "GET /static/uploads/5c2ba9c9-f906-448c-af13-9e18b32e3fc5.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:16] "GET /static/uploads/7410f6d7-2f27-48c0-a588-70f2704d9989.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:16] "GET /static/uploads/666dac28-0f54-40d0-92a7-dcb14463d87a.png HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:16] "GET /static/uploads/6945de21-f547-4ef6-9ecc-00d008201c41.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:16] "GET /static/uploads/765acee4-a295-4f02-9b14-d7e636d07264.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:16] "GET /static/uploads/7c4cb478-6c42-43b2-95a3-c5b45efead06.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:16] "GET /static/uploads/7e6b9c25-f119-416c-a3a5-863d5d9750af.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:16] "GET /static/uploads/819acf66-0397-40cb-a6ee-d47b762972be.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:16] "GET /static/uploads/820d3166-99d7-4e3f-9f99-fa35344bc895.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:16] "GET /static/uploads/ad9d93cf-d85e-45fa-b8ef-8a4dade85c61.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:16] "GET /static/uploads/b4eda1d1-a2f7-4502-bab2-46abc31b21d4.png HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:16] "GET /static/uploads/b6ff23bc-170d-49dc-a7ff-75c50376af54.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:16] "GET /static/uploads/b77156a8-fcec-4679-8092-9a1088c4f222.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:16] "GET /static/uploads/bb3c1c85-bfa9-4946-a4e3-f871e98f26d8.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:16] "GET /static/uploads/ba1dcb23-29d6-4931-a258-b32620d39914.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:16] "GET /static/uploads/c2a44891-30f2-45d0-9340-661d5bc5a305.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:16] "GET /static/uploads/bf442181-dd42-406d-b807-714f7c05b2fa.jpeg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:16] "GET /static/uploads/c5752823-ac7a-4783-b22c-89de79fec9de.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:16] "GET /static/uploads/c58095ac-a44d-4400-8baf-9a72ad27aad8.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:16] "GET /static/uploads/f378732f-242c-46d8-b8a4-f97d8a5b27f2.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 14:47:16] "GET /static/uploads/ee017a6a-3a65-434d-b679-b482550544bf.jpg HTTP/1.1" 304 -
+34.204.101.74 - - [19/Sep/2024 15:16:31] "GET /home HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 15:16:31] "GET /home HTTP/1.1" 200 -
+34.204.101.74 - - [19/Sep/2024 16:20:41] "GET /.git/config HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 16:41:59] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 16:52:14] "GET / HTTP/1.1" 404 -
+34.204.101.74 - - [19/Sep/2024 17:20:28] "GET /robots.txt HTTP/1.1" 404 -
